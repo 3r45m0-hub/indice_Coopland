@@ -222,7 +222,6 @@ footer{max-width:1480px;margin:0 auto;padding:0 24px 28px;color:var(--ink-3);fon
 </style>
 </head>
 <body>
-
 <header class="top">
   <div class="top-in">
     <div class="brand">
@@ -234,684 +233,83 @@ footer{max-width:1480px;margin:0 auto;padding:0 24px 28px;color:var(--ink-3);fon
     </div>
     <div class="top-tools">
       <div class="live" id="live" role="status" aria-live="polite"><span class="dot"></span><span id="liveTxt">Conectando…</span></div>
-      <button class="ibtn" id="btnRefresh" title="Actualizar ahora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Actualizar</button>
+      <button class="ibtn" id="btnRefresh" title="Actualizar ahora" aria-label="Actualizar ahora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Actualizar</button>
       <button class="ibtn" id="btnTheme" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </div>
   </div>
 </header>
-
 <div class="banner" id="banner" hidden></div>
-
 <section class="filters" aria-label="Filtros">
   <div class="filters-in">
     <div class="frow">
-      <div class="fg"><span class="lab">Periodo</span>
-        <div class="seg" id="fPeriod" role="group" aria-label="Periodo"></div></div>
-      <div class="fg" id="fCustom" hidden><span class="lab">Rango personalizado</span>
-        <div class="dates"><input type="date" id="dFrom" aria-label="Desde"><span>–</span><input type="date" id="dTo" aria-label="Hasta"></div></div>
-      <div class="fg"><span class="lab">Turno</span><div class="seg" id="fShift" role="group" aria-label="Turno"></div></div>
-      <div class="fg"><span class="lab">Quirófano / sala</span><div class="ms" id="msRoom"></div></div>
-      <div class="fg"><span class="lab">Procedimiento</span><div class="ms" id="msProc"></div></div>
-      <div class="fg" style="flex:1 1 200px;max-width:300px"><label for="fQ">Búsqueda</label>
-        <input type="search" id="fQ" placeholder="Buscar unidad, sala, procedimiento…"></div>
-      <div class="fg"><span class="lab">&nbsp;</span><button class="btn" id="btnClear">Limpiar filtros</button></div>
-    </div>
-    <div class="frow" style="margin-top:12px">
       <div class="fg" style="flex:1"><span class="lab">Unidad hospitalaria</span><div class="chips" id="fUnit"></div></div>
+      <div class="fg"><span class="lab">&nbsp;</span><button class="btn" id="btnCsv">Exportar resumen CSV</button></div>
     </div>
-    <div class="tags" id="tags"></div>
   </div>
 </section>
-
 <main>
-  <section class="kpis" id="kpis" aria-label="Indicadores clave"></section>
-
-  <section class="card c12" id="goalsCard" style="margin-bottom:16px">
-    <div class="ch">
-      <div><h2>Cumplimiento de metas semanales por unidad</h2>
-        <p>Cirugías realizadas en la semana (lunes a domingo) vs. meta de cada unidad · No depende de los demás filtros</p></div>
-      <div class="sp wnav">
-        <button class="btn sm" id="wPrev" aria-label="Semana anterior">‹</button>
-        <div class="wlab" id="wLab"></div>
-        <button class="btn sm" id="wNext" aria-label="Semana siguiente">›</button>
-        <button class="btn sm" id="wNow">Semana actual</button>
-      </div>
-    </div>
-    <div id="goals"></div>
-  </section>
-
+  <div class="kpis" id="kpis"></div>
   <div class="grid">
-    <section class="card c8">
-      <div class="ch"><div><h2>Tendencia de cirugías</h2><p id="trendSub"></p></div>
-        <div class="sp"><div class="seg" id="trendSeg" role="group" aria-label="Agrupar">
-          <button data-m="day" aria-pressed="true">Día</button><button data-m="week" aria-pressed="false">Semana</button></div></div></div>
-      <div id="trend"></div>
-    </section>
-    <section class="card c4">
-      <div class="ch"><div><h2>Distribución por turno</h2><p>Proporción de cirugías</p></div></div>
-      <div id="donut"></div>
-    </section>
-    <section class="card c6">
-      <div class="ch"><div><h2>Cirugías por unidad hospitalaria</h2><p>Total en el periodo y filtros seleccionados</p></div></div>
-      <div id="byUnit"></div>
-    </section>
-    <section class="card c6">
-      <div class="ch"><div><h2>Utilización de quirófanos</h2><p>Cirugías por sala (Unidad · Sala) · Top 12</p></div></div>
-      <div id="byRoom"></div>
-    </section>
-    <section class="card c6">
-      <div class="ch"><div><h2>Procedimientos más frecuentes</h2><p>Top 10 por número de cirugías</p></div></div>
-      <div id="byProc"></div>
-    </section>
-    <section class="card c6">
-      <div class="ch"><div><h2>Día de la semana × turno</h2><p>¿Cuándo se concentran las jornadas?</p></div></div>
-      <div id="heat"></div>
-    </section>
-    <section class="card c12">
-      <div class="ch"><div><h2>Registro de cirugías</h2><p id="tblSub"></p></div>
-        <div class="sp"><button class="btn sm" id="btnCsv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>Exportar CSV</button></div></div>
-      <div class="tscroll"><table class="tbl" id="tbl"></table></div>
-      <div class="pager" id="pager"></div>
-    </section>
+    <section class="card c12"><div class="ch"><div><h2>Avance por unidad</h2><p>Pacientes intervenidos contra los planeados que reporta cada unidad</p></div></div><div class="tscroll" id="tbl"></div></section>
+    <section class="card c6"><div class="ch"><div><h2>% de logro por unidad</h2><p>Intervenidos / planeados</p></div></div><div id="bLogro"></div></section>
+    <section class="card c6"><div class="ch"><div><h2>Tipos de cirugía</h2><p id="tcSub">Pacientes registrados en el censo nominal</p></div></div><div id="bTipo"></div></section>
   </div>
 </main>
-<footer><span>Fuente: formulario «Registro de Jornadas Quirúrgicas Extraordinarias» · Nombres y NSS no se muestran en pantalla; se incluyen al exportar el CSV.</span><span id="foot"></span></footer>
-
-<div class="tip" id="tip" role="tooltip"></div>
-<div class="toast" id="toast" role="status"></div>
-
-
+<footer><span id="ftSrc"></span><span>Tablero de uso interno · IMSS OOAD San Luis Potosí</span></footer>
+<div class="tip" id="tip"></div>
+<div class="toast" id="toast"></div>
 <script>
 "use strict";
-/* ====================================================================
-   CONFIGURACIÓN — edita aquí para que todos los usuarios vean lo mismo
-   ==================================================================== */
-const CONFIG = {
-  DATA_URL: "https://docs.google.com/spreadsheets/d/15RidslQp5cjdcF8OyFoKt28mtlk0OnJgHzHlNJO9Hy0/edit?usp=sharing", // Acepta el enlace normal de la hoja o un enlace CSV publicado
-  REFRESH_SECONDS: 60,     // Frecuencia de actualización automática
-  METAS_SEMANALES: {       // Meta de cirugías por semana, por unidad
-    "HGZ 1": 21,
-    "HGZ 2": 21,
-    "HGZ 6": 21,
-    "HGZ 50": 21,
-    "HGSZ 4": 9,
-    "HGSZ 9": 9,
-  },
-  UMBRAL_EN_AVANCE: 0.70   // ≥70 % = "En avance"; ≥100 % = "Cumplida"
-};
-
-/* ====================== utilidades ====================== */
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const norm=s=>String(s??"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/\s+/g," ").trim();
-const tidy=s=>String(s??"").replace(/\s+/g," ").trim();
-const p2=n=>String(n).padStart(2,"0");
-const DAY=864e5;
-const MES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
-const DIAS=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
-const DIASL=["lunes","martes","miércoles","jueves","viernes","sábado","domingo"];
-const mid=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
-const addDays=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
-const monday=d=>{const m=mid(d);return addDays(m,-((m.getDay()+6)%7))};
-const dkey=d=>d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate());
-const fmtS=d=>d.getDate()+" "+MES[d.getMonth()];
-const fmtF=d=>p2(d.getDate())+"/"+p2(d.getMonth()+1)+"/"+d.getFullYear();
-const nf=new Intl.NumberFormat("es-MX");
-const fmtN=n=>nf.format(n);
-const pct=n=>Math.round(n*100)+"%";
-function isoWeek(d){const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const dn=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-dn+3);const f=new Date(Date.UTC(t.getUTCFullYear(),0,4));return 1+Math.round(((t-f)/DAY-3+((f.getUTCDay()+6)%7))/7)}
-function lsGet(k,def){try{const v=localStorage.getItem(k);return v==null?def:JSON.parse(v)}catch(e){return def}}
-function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-
-/* ====================== catálogo de unidades ====================== */
+const CONFIG={DATA_URL:"datos.json",REFRESH_SECONDS:60,UMBRAL_EN_AVANCE:0.70};
 const CATALOGO=["HGZ 1","HGZ 2","HGZ 6","HGZ 50","HGSZ 4","HGSZ 9"];
-function canonUnit(raw){
-  const m=norm(raw).match(/(hgsz|hgz)[^0-9]*(\d+)/);
-  return m?`${m[1].toUpperCase()} ${+m[2]}`:tidy(raw);
-}
-
-/* ====================== estado ====================== */
-const S={
-  rows:[],units:[],shifts:[],rooms:[],procs:[],nominal:false,
-  demo:false,hasData:false,lastOk:null,lastErr:null,countdown:0,loading:false,
-  f:{units:new Set(),shifts:new Set(),rooms:new Set(),procs:new Set(),q:""},
-  period:{mode:"all",from:"",to:""},
-  weekStart:monday(new Date()),
-  sort:{k:"t",d:-1},page:0,PAGE:12,trend:"day"
-};
-const cfg={
-  url:lsGet("cfg_url",null)??CONFIG.DATA_URL,
-  sec:lsGet("cfg_sec",null)??CONFIG.REFRESH_SECONDS,
-  metasLocal:lsGet("cfg_metas",null)
-};
-const DEMO_METAS={};
-function metas(){ if(S.demo) return DEMO_METAS; const o=Object.assign({},CONFIG.METAS_SEMANALES,cfg.metasLocal||{}),r={}; for(const k in o) r[canonUnit(k)]=o[k]; return r; }
-
-/* ====================== CSV ====================== */
-function parseCSV(t){
-  const out=[];let row=[],f="",q=false;
-  if(t.charCodeAt(0)===0xFEFF)t=t.slice(1);
-  for(let i=0;i<t.length;i++){
-    const c=t[i];
-    if(q){ if(c==='"'){ if(t[i+1]==='"'){f+='"';i++} else q=false } else f+=c }
-    else if(c==='"') q=true;
-    else if(c===","){row.push(f);f=""}
-    else if(c==="\n"||c==="\r"){ if(c==="\r"&&t[i+1]==="\n")i++; row.push(f);f="";out.push(row);row=[] }
-    else f+=c;
-  }
-  if(f!==""||row.length){row.push(f);out.push(row)}
-  return out.filter(r=>r.some(c=>c!==""));
-}
-function parseDate(v){
-  v=tidy(v); if(!v) return null;
-  let m=v.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
-  if(m) return new Date(+m[1],+m[2]-1,+m[3]);
-  m=v.match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{2,4})/);
-  if(m){ let a=+m[1],b=+m[2],y=+m[3]; if(y<100)y+=2000;
-    let d=a,mo=b; if(a<=12&&b>12){d=b;mo=a}
-    const dt=new Date(y,mo-1,d); return dt.getMonth()===mo-1?dt:null; }
-  m=v.match(/^Date\((\d+),(\d+),(\d+)/); if(m) return new Date(+m[1],+m[2],+m[3]);
-  return null;
-}
-function buildRows(table){
-  if(!table.length) return {rows:[],err:"El archivo está vacío."};
-  const n=table[0].map(norm);
-  const find=(...alts)=>{for(const a of alts){const i=n.findIndex(x=>x.includes(a));if(i>=0)return i}return -1};
-  const ix={unit:find("unidad"),date:find("fecha"),shift:find("turno"),proc:find("procedimiento"),room:find("sala","quirofano")};
-  const miss=Object.entries(ix).filter(([,v])=>v<0).map(([k])=>({unit:"Unidad Hospitalaria",date:"Fecha de realización",shift:"Turno",proc:"Procedimiento",room:"Sala"}[k]));
-  if(miss.length) return {rows:[],err:"No se encontraron las columnas: "+miss.join(", ")+"."};
-  const ox={pac:find("paciente"),nss:find("seguro social","nss"),agr:find("agregado"),ts:find("marca")};
-  const nominal=ox.pac>=0||ox.nss>=0;
-  const gv=(r,i)=>i>=0?tidy(r[i]):"";
-  const maps={unit:new Map(),shift:new Map(),room:new Map(),proc:new Map()};
-  const canon=(m,raw)=>{raw=tidy(raw)||"Sin dato";const k=norm(raw);if(!m.has(k))m.set(k,raw);return m.get(k)};
-  const rows=[];
-  for(let i=1;i<table.length;i++){
-    const r=table[i]; const d=parseDate(r[ix.date]); if(!d||!tidy(r[ix.unit])) continue;
-    const o={t:+mid(d),d:mid(d),unit:canonUnit(r[ix.unit])||"Sin dato",shift:canon(maps.shift,r[ix.shift]),room:canon(maps.room,r[ix.room]),proc:canon(maps.proc,r[ix.proc])};
-    o.pac=gv(r,ox.pac);o.nss=gv(r,ox.nss);o.agr=gv(r,ox.agr);o.ts=gv(r,ox.ts);
-    o.hay=norm([o.unit,o.shift,o.room,o.proc].join(" | ")); rows.push(o);
-  }
-  return {rows,nominal};
-}
-function setRows(rows){
-  S.rows=rows; S.hasData=rows.length>0;
-  const uniq=k=>[...new Set(rows.map(r=>r[k]))];
-  S.units=[...CATALOGO,...uniq("unit").filter(u=>!CATALOGO.includes(u)).sort((a,b)=>a.localeCompare(b,"es",{numeric:true}))];
-  S.rooms=uniq("room").sort((a,b)=>a.localeCompare(b,"es",{numeric:true}));
-  S.procs=uniq("proc").sort((a,b)=>a.localeCompare(b,"es"));
-  const rank=s=>{const x=norm(s);return x.includes("matut")?0:x.includes("vesper")?1:x.includes("noct")?2:3};
-  S.shifts=uniq("shift").sort((a,b)=>rank(a)-rank(b)||a.localeCompare(b,"es"));
-  for(const k of ["units","shifts","rooms","procs"]){ const valid=new Set(S[k==="units"?"units":k]); S.f[k]=new Set([...S.f[k]].filter(x=>valid.has(x))); }
-}
-
-/* ====================== demo ====================== */
-function demoRows(){
-  let seed=20261102; const rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
-  const units=CATALOGO;
-  const w=[1.4,0.9,0.7,1.2,0.5,0.4];
-  const procs=["Colecistectomía laparoscópica","Hernioplastía inguinal","Apendicectomía","Cesárea","Histerectomía abdominal","Artroscopia de rodilla","Facoemulsificación con LIO","Amigdalectomía","Safenectomía","Resección transuretral de próstata","Plastía umbilical","Tiroidectomía"];
-  const pw=[5,4,2,3,2,2,5,1.5,1.5,1.5,1.5,1];
-  const shifts=["Matutino","Vespertino","Nocturno"], sw=[3,2.2,0.7];
-  const pick=(a,ws)=>{let s=ws.reduce((x,y)=>x+y,0)*rnd();for(let i=0;i<a.length;i++){s-=ws[i];if(s<=0)return a[i]}return a[a.length-1]};
-  const today=mid(new Date()), rows=[];
-  units.forEach((u,ui)=>{ DEMO_METAS[u]=[18,10,8,14,6,5][ui]; });
-  for(let off=0;off<84;off++){
-    const d=addDays(today,-off), wd=(d.getDay()+6)%7, base=wd>=5?3.2:wd===4?1.8:0.9;
-    units.forEach((u,ui)=>{
-      let n=Math.round(base*w[ui]*(0.6+rnd()*0.9)*(1+ (84-off)/300));
-      for(let k=0;k<n;k++){
-        const sh=pick(shifts,wd>=5?[2,2.5,0.4]:sw);
-        rows.push({pac:"Paciente de ejemplo "+(rows.length+1),nss:String(10000000000+rows.length),agr:"1M",ts:"",t:+d,d,unit:u,shift:sh,room:"Quirófano "+(1+Math.floor(rnd()*(ui>=4?3:6))),proc:pick(procs,pw)});
-      }
-    });
-  }
-  rows.forEach(o=>o.hay=norm([o.unit,o.shift,o.room,o.proc].join(" | ")));
-  return rows;
-}
-
-/* ====================== carga ====================== */
-const HOJAS=["Respuestas","Respuestas de formulario 1","Tablero"];
-function candidateUrls(u){
-  u=tidy(u); if(!u) return [];
-  if(/output=csv/.test(u)||/gviz\/tq/.test(u)) return [u];
-  if(/\/spreadsheets\/d\/e\/[^/]+\/pub/.test(u)) return [u.replace(/output=[a-z]+/,"")+(u.includes("?")?"&":"?")+"output=csv"];
-  const m=u.match(/\/spreadsheets\/d\/([A-Za-z0-9_-]+)/); if(!m) return [u];
-  const base=`https://docs.google.com/spreadsheets/d/${m[1]}/gviz/tq?tqx=out:csv&`, g=u.match(/[#&?]gid=(\d+)/);
-  return g?[base+"gid="+g[1]]:[...HOJAS.map(h=>base+"sheet="+encodeURIComponent(h)),base.slice(0,-1)];
-}
-async function fetchText(url){
-  const sep=url.includes("?")?"&":"?"; let to;
-  const timeout=new Promise((_,rej)=>{to=setTimeout(()=>rej(Object.assign(new Error("timeout"),{name:"TimeoutError"})),25000)});
-  try{
-    const res=await Promise.race([fetch(url+sep+"_ts="+Date.now()),timeout]);
-    if(!res.ok) throw new Error("HTTP "+res.status);
-    const txt=await res.text();
-    if(/^\s*<(!doctype|html)/i.test(txt)) throw new Error("La URL no devuelve un CSV. Verifica que la hoja esté compartida con «Cualquier persona con el enlace» o publicada en la web.");
-    return txt;
-  } finally { clearTimeout(to) }
-}
-const SHEET_ID="15RidslQp5cjdcF8OyFoKt28mtlk0OnJgHzHlNJO9Hy0";
-function extractContent(p){
-  if(p==null) return null;
-  if(typeof p==="string"){ try{p=JSON.parse(p)}catch(e){return p} }
-  if(typeof p.content==="string") return p.content;
-  if(Array.isArray(p.content)){ for(const c of p.content){ if(c&&c.text){ const r=extractContent(c.text); if(r) return r } } }
-  if(p.structuredContent) return extractContent(p.structuredContent);
-  if(p.payload) return extractContent(p.payload);
-  return null;
-}
-function decodeMaybeB64(t){
-  const c=String(t).trim();
-  if(/^[A-Za-z0-9+\/=_\-\s]+$/.test(c)&&!c.includes(",")){
-    try{ const b=atob(c.replace(/-/g,"+").replace(/_/g,"/").replace(/\s/g,"")); const u=Uint8Array.from(b,ch=>ch.charCodeAt(0)); return new TextDecoder("utf-8").decode(u) }catch(e){}
-  }
-  return c;
-}
-let mcpCache;
-async function getMcp(){
-  if(mcpCache!==undefined) return mcpCache;
-  try{
-    if(!window.claude||typeof window.claude.use!=="function") return (mcpCache=null);
-    mcpCache=await Promise.race([window.claude.use("mcp"),new Promise(r=>setTimeout(()=>r(null),10000))]);
-  }catch(e){ mcpCache=null }
-  return mcpCache;
-}
-async function fetchViaDrive(){
-  const mcp=await getMcp(); if(!mcp) return null;
-  const input={fileId:SHEET_ID,exportMimeType:"text/csv"};
-  let payload;
-  try{ const srv=await mcp.server("Google Drive"); payload=await srv.download_file_content(input) }
-  catch(e1){
-    try{ const r=await mcp.callTool("Google Drive","download_file_content",input); payload=r&&r.payload!==undefined?r.payload:r }
-    catch(e2){ throw new Error("No se pudo leer la hoja con tu conexión a Google Drive"+(e2&&e2.message?": "+e2.message:"")+". Revisa que el conector de Google Drive esté activo y tengas acceso a la hoja.") }
-  }
-  const c=extractContent(payload); if(c==null) throw new Error("Google Drive no devolvió contenido de la hoja.");
-  return decodeMaybeB64(c);
-}
-async function load(manual){
-  if(S.demo){ renderLive(); return }
-  if(!cfg.url&&!(await getMcp())){ S.lastErr="Aún no se ha configurado la fuente de datos."; setRows([]); renderAll(); return }
-  if(S.loading) return; S.loading=true; renderLive();
-  try{
-    let best=null,lastE=null,nomB=false;
-    if(!cfg.url||/docs\.google\.com\/spreadsheets\/d\/15RidslQp5cjdcF8OyFoKt28mtlk0OnJgHzHlNJO9Hy0/.test(cfg.url)){
-      try{
-        const txt=await fetchViaDrive();
-        if(txt!=null){ const {rows,err,nominal}=buildRows(parseCSV(txt)); if(err) throw new Error(err); best=rows; nomB=nominal }
-      }catch(e){ lastE=e; if(await getMcp()) throw e }
-    }
-    for(const u of (best?[]:candidateUrls(cfg.url))){
-      try{
-        const {rows,err,nominal}=buildRows(parseCSV(await fetchText(u)));
-        if(err) throw new Error(err);
-        if(!best){ best=rows; nomB=nominal }
-        if(rows.length){ best=rows; nomB=nominal; break }
-      }catch(e){ lastE=e }
-    }
-    if(!best) throw lastE||new Error("No se pudo leer la hoja.");
-    const before=S.rows.length, first=!S.lastOk, rows=best; S.nominal=nomB;
-    setRows(rows); S.lastOk=new Date(); S.lastErr=null;
-    if(!first&&rows.length>before) toast("+"+(rows.length-before)+" cirugía"+(rows.length-before>1?"s":"")+" nueva"+(rows.length-before>1?"s":"")+" registrada"+(rows.length-before>1?"s":""));
-    if(manual) toast("Datos actualizados");
-  }catch(e){
-    S.lastErr=e.name==="TimeoutError"?"Tiempo de espera agotado al consultar la hoja.":(e.message==="Failed to fetch"?"No se pudo conectar con la hoja. Verifica que esté compartida como «Cualquier persona con el enlace» (Lector) o publicada en la web.":e.message);
-  }finally{ S.loading=false; S.countdown=Math.max(15,+cfg.sec||60); renderAll(); }
-}
-let timer=null;
-function startTimer(){
-  clearInterval(timer); S.countdown=Math.max(15,+cfg.sec||60);
-  timer=setInterval(()=>{ if(document.hidden||S.demo) return; S.countdown--; if(S.countdown<=0) load(); renderLive(); },1000);
-}
-document.addEventListener("visibilitychange",()=>{ if(!document.hidden&&!S.demo&&cfg.url&&(!S.lastOk||Date.now()-S.lastOk>(cfg.sec*1000)/2)) load(); });
-
-/* ====================== filtros ====================== */
-function periodRange(mode=S.period.mode){
-  const t=mid(new Date());
-  switch(mode){
-    case "today": return {from:+t,to:+t};
-    case "week": {const m=monday(t);return {from:+m,to:+addDays(m,6)}}
-    case "lastweek": {const m=addDays(monday(t),-7);return {from:+m,to:+addDays(m,6)}}
-    case "d30": return {from:+addDays(t,-29),to:+t};
-    case "month": return {from:+new Date(t.getFullYear(),t.getMonth(),1),to:+new Date(t.getFullYear(),t.getMonth()+1,0)};
-    case "custom": {
-      const a=S.period.from?+mid(new Date(S.period.from+"T00:00")):null, b=S.period.to?+mid(new Date(S.period.to+"T00:00")):null;
-      return (a==null&&b==null)?null:{from:a,to:b};
-    }
-    default: return null;
-  }
-}
-function getRows(excl,rng){
-  const f=S.f,r=rng===undefined?periodRange():rng,q=norm(f.q);
-  return S.rows.filter(x=>{
-    if(r){ if(r.from!=null&&x.t<r.from) return false; if(r.to!=null&&x.t>r.to) return false }
-    if(excl!=="units"&&f.units.size&&!f.units.has(x.unit)) return false;
-    if(excl!=="shifts"&&f.shifts.size&&!f.shifts.has(x.shift)) return false;
-    if(excl!=="rooms"&&f.rooms.size&&!f.rooms.has(x.room)) return false;
-    if(excl!=="procs"&&f.procs.size&&!f.procs.has(x.proc)) return false;
-    if(q&&!x.hay.includes(q)) return false;
-    return true;
-  });
-}
-const countBy=(rows,k)=>{const m=new Map();rows.forEach(r=>m.set(r[k],(m.get(r[k])||0)+1));return m};
-
-/* colores por entidad */
-const unitColor=u=>{const i=S.units.indexOf(u);return i>=0&&i<8?`var(--s${i+1})`:"var(--s-other)"};
-const shiftColor=s=>{const x=norm(s);const i=x.includes("matut")?1:x.includes("vesper")?2:x.includes("noct")?3:(4+(S.shifts.filter(y=>!/matut|vesper|noct/.test(norm(y))).indexOf(s)));return i<=8?`var(--s${i})`:"var(--s-other)"};
-
-/* ====================== UI de filtros ====================== */
-const PERIODS=[["all","Todo"],["today","Hoy"],["week","Esta semana"],["lastweek","Semana anterior"],["d30","Últimos 30 días"],["month","Este mes"],["custom","Personalizado"]];
-function renderPeriod(){
-  $("#fPeriod").innerHTML=PERIODS.map(([k,l])=>`<button data-p="${k}" aria-pressed="${S.period.mode===k}">${l}</button>`).join("");
-  $("#fCustom").hidden=S.period.mode!=="custom";
-}
-function renderShiftBtns(){
-  const c=countBy(getRows("shifts"),"shift");
-  $("#fShift").innerHTML=S.shifts.length?S.shifts.map(s=>`<button data-s="${esc(s)}" aria-pressed="${S.f.shifts.has(s)}"><span class="sw" style="background:${shiftColor(s)}"></span>${esc(s)} <span style="opacity:.65;font-size:11.5px">${c.get(s)||0}</span></button>`).join(""):`<span style="color:var(--ink-3);font-size:13px;padding:6px 8px">—</span>`;
-}
-function renderUnitChips(){
-  const c=countBy(getRows("units"),"unit");
-  const tot=[...c.values()].reduce((a,b)=>a+b,0);
-  $("#fUnit").innerHTML=`<button class="chip all" data-all="1" aria-pressed="${S.f.units.size===0}">Todas las unidades<span class="n">${tot}</span></button>`+
-    S.units.map(u=>`<button class="chip ${(c.get(u)||0)?"":"zero"}" data-u="${esc(u)}" aria-pressed="${S.f.units.has(u)}" title="Filtrar por ${esc(u)}"><span class="sw" style="background:${unitColor(u)}"></span>${esc(u)}<span class="n">${c.get(u)||0}</span></button>`).join("");
-}
-class Multi{
-  constructor(el,label,key,all){this.el=el;this.label=label;this.key=key;this.all=all;this.q="";
-    el.innerHTML=`<button class="trig" aria-haspopup="listbox" aria-expanded="false"><span class="t"></span><span class="b" hidden></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
-    <div class="panel"><input type="search" placeholder="Buscar…" aria-label="Buscar en ${label}"><div class="acts"><button data-a="all">Seleccionar todo</button><button data-a="none">Limpiar</button></div><div class="opts" role="listbox"></div></div>`;
-    this.trig=el.querySelector(".trig");this.inp=el.querySelector("input");this.opts=el.querySelector(".opts");
-    this.trig.onclick=e=>{e.stopPropagation();const o=!el.classList.contains("open");closeMs();if(o){el.classList.add("open");this.trig.setAttribute("aria-expanded","true");this.inp.focus()}};
-    el.querySelector(".panel").onclick=e=>e.stopPropagation();
-    this.inp.oninput=()=>{this.q=norm(this.inp.value);this.list()};
-    el.querySelectorAll(".acts button").forEach(b=>b.onclick=()=>{const set=S.f[key];if(b.dataset.a==="all")this.visible().forEach(o=>set.add(o));else if(this.q)this.visible().forEach(o=>set.delete(o));else set.clear();S.page=0;renderAll()});
-    this.opts.onchange=e=>{const v=e.target.dataset.v,set=S.f[key];e.target.checked?set.add(v):set.delete(v);S.page=0;renderAll()};
-  }
-  visible(){return this.all().filter(o=>!this.q||norm(o).includes(this.q))}
-  list(){
-    const c=countBy(getRows(this.key),{rooms:"room",procs:"proc"}[this.key]);
-    const set=S.f[this.key];
-    const arr=this.visible().sort((a,b)=>(set.has(b)-set.has(a))||((c.get(b)||0)-(c.get(a)||0))||a.localeCompare(b,"es",{numeric:true}));
-    this.opts.innerHTML=arr.length?arr.map(o=>`<label class="opt ${(c.get(o)||0)?"":"zero"}"><input type="checkbox" data-v="${esc(o)}" ${set.has(o)?"checked":""}><span class="l" title="${esc(o)}">${esc(o)}</span><span class="c">${c.get(o)||0}</span></label>`).join(""):`<div style="padding:10px;color:var(--ink-3);font-size:13px">Sin coincidencias</div>`;
-  }
-  refresh(){
-    const n=S.f[this.key].size;
-    this.trig.querySelector(".t").textContent=n===0?`Todos (${this.all().length})`:(n===1?[...S.f[this.key]][0]:`${this.label}`);
-    const b=this.trig.querySelector(".b");b.hidden=n<2;b.textContent=n;
-    this.list();
-  }
-}
-const closeMs=()=>$$(".ms.open").forEach(m=>{m.classList.remove("open");m.querySelector(".trig").setAttribute("aria-expanded","false")});
-document.addEventListener("click",closeMs);
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeMs()}});
-let msRoom,msProc;
-
-function renderTags(){
-  const t=[];
-  const add=(grp,v,l)=>t.push(`<span class="tag">${esc(l)}<button data-g="${grp}" data-v="${esc(v)}" aria-label="Quitar ${esc(l)}">✕</button></span>`);
-  S.f.units.forEach(v=>add("units",v,v));S.f.shifts.forEach(v=>add("shifts",v,"Turno: "+v));S.f.rooms.forEach(v=>add("rooms",v,v));S.f.procs.forEach(v=>add("procs",v,v));
-  if(S.f.q)t.push(`<span class="tag">Búsqueda: ${esc(S.f.q)}<button data-g="q" aria-label="Quitar búsqueda">✕</button></span>`);
-  const r=periodRange();
-  $("#tags").innerHTML=t.join("")+(t.length||r?`<span class="cnt">${fmtN(getRows().length)} de ${fmtN(S.rows.length)} registros</span>`:"");
-  $("#tags").style.display=(t.length||r)?"flex":"none";
-}
-
-/* ====================== tooltip ====================== */
-const tip=$("#tip");
-function showTip(html,e){tip.innerHTML=html;tip.style.opacity=1;const w=tip.offsetWidth,h=tip.offsetHeight;let x=e.clientX+14,y=e.clientY+14;if(x+w>innerWidth-8)x=e.clientX-w-14;if(y+h>innerHeight-8)y=e.clientY-h-14;tip.style.left=Math.max(6,x)+"px";tip.style.top=Math.max(6,y)+"px"}
-const hideTip=()=>{tip.style.opacity=0};
-function bindTips(root){root.querySelectorAll("[data-tip]").forEach(el=>{el.addEventListener("mousemove",e=>showTip(el.dataset.tip,e));el.addEventListener("mouseleave",hideTip);el.addEventListener("focus",()=>{const r=el.getBoundingClientRect();showTip(el.dataset.tip,{clientX:r.left,clientY:r.top})});el.addEventListener("blur",hideTip)})}
-const emptyHTML=(t,s)=>`<div class="empty"><div><b>${t}</b>${s||""}</div></div>`;
-
-/* ====================== KPIs ====================== */
-function renderKPIs(){
-  const rows=getRows(), r=periodRange();
-  const total=rows.length;
-  let delta="";
-  if(r&&r.from!=null&&r.to!=null){
-    const len=Math.round((r.to-r.from)/DAY)+1, prev=getRows(undefined,{from:r.from-len*DAY,to:r.from-DAY}).length;
-    if(prev>0){const dv=(total-prev)/prev;delta=`<span class="delta ${dv>0.005?"up":dv<-0.005?"down":"flat"}">${dv>0.005?"▲":dv<-0.005?"▼":"■"} ${Math.abs(Math.round(dv*100))}%</span> vs. periodo previo (${fmtN(prev)})`}
-    else delta=`<span style="color:var(--ink-3)">Sin datos en el periodo previo</span>`;
-  } else delta=`<span style="color:var(--ink-3)">Todo el histórico</span>`;
-  const days=new Set(rows.map(x=>x.t)).size, avg=days?total/days:0;
-  const sh=[...countBy(rows,"shift")].sort((a,b)=>b[1]-a[1])[0];
-  const units=new Set(rows.map(x=>x.unit)).size, rooms=new Set(rows.map(x=>x.unit+"|"+x.room)).size;
-  const g=goalData(S.weekStart), mt=g.rows.filter(x=>x.meta>0);
-  const gp=mt.length?mt.reduce((a,x)=>a+x.real,0)/mt.reduce((a,x)=>a+x.meta,0):null;
-  const K=(k,v,d)=>`<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`;
-  $("#kpis").innerHTML=
-    K("Cirugías realizadas",fmtN(total),delta)+
-    K("Cumplimiento semanal",gp==null?"—":`${pct(gp)}`,gp==null?"Metas por definir":`${mt.filter(x=>x.real>=x.meta).length} de ${mt.length} unidades con meta cumplida`)+
-    K("Unidades participantes",fmtN(units),`${fmtN(rooms)} quirófanos utilizados`)+
-    K("Promedio por día con jornada",total?avg.toLocaleString("es-MX",{maximumFractionDigits:1}):"—",`${fmtN(days)} día${days===1?"":"s"} con actividad`)+
-    K("Turno con más cirugías",sh?`<span style="font-size:22px">${esc(sh[0])}</span>`:"—",sh?`${fmtN(sh[1])} cirugías · ${pct(sh[1]/total)} del total`:"Sin datos");
-}
-
-/* ====================== metas semanales ====================== */
-function goalData(ws){
-  const m=metas(), wk=+ws, byU=new Map();
-  S.rows.forEach(x=>{ const w=+monday(x.d); let o=byU.get(x.unit); if(!o)byU.set(x.unit,o=new Map()); o.set(w,(o.get(w)||0)+1) });
-  const units=[...new Set([...S.units,...Object.keys(m)])];
-  const rows=units.map(u=>{
-    const meta=+m[u]||0, real=(byU.get(u)||new Map()).get(wk)||0;
-    const hist=[];for(let i=7;i>=0;i--){const w=+addDays(ws,-7*i);hist.push({w,n:(byU.get(u)||new Map()).get(w)||0})}
-    return {u,meta,real,p:meta?real/meta:null,hist};
-  });
-  return {rows};
-}
-function stateOf(p){
-  if(p==null) return {c:"none",l:"Sin meta",i:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>`};
-  if(p>=1) return {c:"good",l:"Cumplida",i:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`};
-  if(p>=CONFIG.UMBRAL_EN_AVANCE) return {c:"warn",l:"En avance",i:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 17h.01"/></svg>`};
-  return {c:"crit",l:"Por debajo",i:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`};
-}
-function sparkHist(h,meta){
-  const W=96,H=28,mx=Math.max(meta||0,...h.map(x=>x.n),1),bw=8,gap=4;
-  const bars=h.map((x,i)=>{const bh=Math.max(x.n?2:0,x.n/mx*(H-2)),met=meta&&x.n>=meta;return `<rect x="${i*(bw+gap)}" y="${H-bh}" width="${bw}" height="${bh}" rx="2" fill="${met?"var(--good)":"var(--s-other)"}" opacity="${i===h.length-1?1:.75}" data-tip="<b>Sem. ${isoWeek(new Date(x.w))}</b> · ${fmtS(new Date(x.w))}<br>${x.n} cirugías${meta?` (meta ${meta})`:""}"/>`}).join("");
-  const ml=meta?`<line x1="0" x2="${W}" y1="${H-meta/mx*(H-2)}" y2="${H-meta/mx*(H-2)}" stroke="var(--ink-2)" stroke-dasharray="3 3" stroke-width="1"/>`:"";
-  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Últimas 8 semanas">${bars}${ml}</svg>`;
-}
-function renderGoals(){
-  const ws=S.weekStart, we=addDays(ws,6), cur=+monday(new Date())===+ws;
-  $("#wLab").innerHTML=`Semana ${isoWeek(ws)} · ${fmtS(ws)} – ${fmtS(we)} ${we.getFullYear()}<small>${cur?"Semana en curso":"Semana cerrada"}</small>`;
-  $("#wNext").disabled=+ws>=+monday(new Date()); $("#wNext").style.opacity=$("#wNext").disabled?.4:1;
-  const g=goalData(ws), rows=g.rows.filter(x=>!S.f.units.size||S.f.units.has(x.u));
-  const el=$("#goals");
-  if(!rows.length){el.innerHTML=emptyHTML("Aún no hay unidades con registros","Cuando se capturen cirugías en el formulario aparecerán aquí.");return}
-  const mt=rows.filter(x=>x.meta>0), sumM=mt.reduce((a,x)=>a+x.meta,0), sumR=mt.reduce((a,x)=>a+x.real,0);
-  const met=mt.filter(x=>x.real>=x.meta).length, falta=mt.reduce((a,x)=>a+Math.max(0,x.meta-x.real),0);
-  const sm=`<div class="gsum">
-    <div class="gs"><div class="k">Cumplimiento global</div><div class="v">${sumM?pct(sumR/sumM):"—"}</div></div>
-    <div class="gs"><div class="k">Cirugías / meta total</div><div class="v">${fmtN(sumR)}<span style="font-size:14px;color:var(--ink-3);font-weight:600"> / ${sumM?fmtN(sumM):"—"}</span></div></div>
-    <div class="gs"><div class="k">Unidades con meta cumplida</div><div class="v">${mt.length?`${met} <span style="font-size:14px;color:var(--ink-3);font-weight:600">de ${mt.length}</span>`:"—"}</div></div>
-    <div class="gs"><div class="k">Cirugías pendientes para cumplir</div><div class="v">${mt.length?fmtN(falta):"—"}</div></div></div>`;
-  const note=mt.length?"":`<div style="background:var(--warn-bg);color:var(--warn);padding:10px 14px;border-radius:10px;margin-bottom:12px;font-size:13px;font-weight:550">Aún no hay metas definidas. En cuanto se capturen, el cumplimiento se calculará automáticamente.</div>`;
-  el.innerHTML=note+sm+`<div class="tscroll"><table class="tbl"><thead><tr><th>Unidad</th><th class="num">Meta</th><th class="num">Realizadas</th><th>Cumplimiento</th><th>Estado</th><th>Últimas 8 semanas</th></tr></thead><tbody>`+
-  rows.map(x=>{const s=stateOf(x.p), col=s.c==="good"?"var(--good)":s.c==="warn"?"var(--warn)":s.c==="crit"?"var(--crit)":"var(--s-other)";
-    return `<tr><td><div class="u"><i style="background:${unitColor(x.u)}"></i>${esc(x.u)}</div></td><td class="num">${x.meta||"—"}</td><td class="num"><b>${fmtN(x.real)}</b></td>
-    <td><div class="pb"><div class="bar"><i style="width:${x.p==null?0:Math.min(100,x.p*100)}%;background:${col}"></i></div><b>${x.p==null?"—":pct(x.p)}</b></div></td>
-    <td><span class="st ${s.c}">${s.i}${s.l}</span></td><td>${sparkHist(x.hist,x.meta)}</td></tr>`}).join("")+`</tbody></table></div>
-    <p style="font-size:12px;color:var(--ink-3);margin:10px 0 0">Estados: <b>Cumplida</b> ≥ 100 % · <b>En avance</b> ≥ ${Math.round(CONFIG.UMBRAL_EN_AVANCE*100)} % · <b>Por debajo</b> &lt; ${Math.round(CONFIG.UMBRAL_EN_AVANCE*100)} %. En las barras de 8 semanas, verde = semana con meta cumplida; la línea punteada es la meta.</p>`;
-  bindTips(el);
-}
-
-/* ====================== gráficas ====================== */
-function hbars(el,items,opt={}){
-  if(!items.length){el.innerHTML=emptyHTML("Sin datos para mostrar","Ajusta los filtros o el periodo.");return}
-  const max=Math.max(...items.map(i=>i.v)),tot=opt.total||items.reduce((a,i)=>a+i.v,0);
-  el.innerHTML=`<div class="hb">`+items.map(i=>`<div class="hr" data-tip="<b>${esc(i.label)}</b><br>${fmtN(i.v)} cirugías · ${pct(i.v/tot)} del total"><div class="l" title="${esc(i.label)}">${esc(i.label)}${i.sub?`<small>${esc(i.sub)}</small>`:""}</div><div class="tr"><div class="br" style="width:${i.v/max*100}%;background:${i.c}"></div></div><div class="vv">${fmtN(i.v)}</div></div>`).join("")+`</div>`;
-  bindTips(el);
-}
-function renderUnitBars(){
-  const rows=getRows(),m=countBy(rows,"unit");
-  hbars($("#byUnit"),[...m].sort((a,b)=>b[1]-a[1]).map(([u,v])=>({label:u,v,c:unitColor(u)})),{total:rows.length});
-}
-function renderRoomBars(){
-  const rows=getRows(),m=new Map();
-  rows.forEach(r=>{const k=r.unit+"\u0001"+r.room;m.set(k,(m.get(k)||0)+1)});
-  const multi=S.units.length>1;
-  const it=[...m].sort((a,b)=>b[1]-a[1]).slice(0,12).map(([k,v])=>{const [u,r]=k.split("\u0001");return {label:r,sub:multi?u:"",v,c:unitColor(u)}});
-  hbars($("#byRoom"),it,{total:rows.length});
-}
-function renderProcBars(){
-  const rows=getRows(),m=countBy(rows,"proc");
-  hbars($("#byProc"),[...m].sort((a,b)=>b[1]-a[1]).slice(0,10).map(([p,v])=>({label:p,v,c:"var(--s1)"})),{total:rows.length});
-}
-function arc(cx,cy,R,r,a0,a1){
-  const p=(rad,a)=>[cx+rad*Math.cos(a),cy+rad*Math.sin(a)],large=a1-a0>Math.PI?1:0;
-  const [x0,y0]=p(R,a0),[x1,y1]=p(R,a1),[x2,y2]=p(r,a1),[x3,y3]=p(r,a0);
-  return `M${x0} ${y0}A${R} ${R} 0 ${large} 1 ${x1} ${y1}L${x2} ${y2}A${r} ${r} 0 ${large} 0 ${x3} ${y3}Z`;
-}
-function renderDonut(){
-  const rows=getRows(),m=countBy(rows,"shift"),el=$("#donut");
-  if(!rows.length){el.innerHTML=emptyHTML("Sin datos para mostrar","Ajusta los filtros o el periodo.");return}
-  const items=S.shifts.filter(s=>m.get(s)).map(s=>({s,v:m.get(s)})),tot=rows.length,cx=80,cy=80,R=76,r=50;
-  let a=-Math.PI/2,paths="";
-  if(items.length===1) paths=`<circle cx="${cx}" cy="${cy}" r="${(R+r)/2}" fill="none" stroke="${shiftColor(items[0].s)}" stroke-width="${R-r}" data-tip="<b>${esc(items[0].s)}</b><br>${fmtN(tot)} cirugías · 100%"/>`;
-  else items.forEach(i=>{const da=i.v/tot*2*Math.PI;paths+=`<path d="${arc(cx,cy,R,r,a,a+da)}" fill="${shiftColor(i.s)}" stroke="var(--surface)" stroke-width="2" data-tip="<b>${esc(i.s)}</b><br>${fmtN(i.v)} cirugías · ${pct(i.v/tot)}"/>`;a+=da});
-  el.innerHTML=`<div class="donut"><svg width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Distribución por turno">${paths}<text x="80" y="76" text-anchor="middle" font-size="26" font-weight="700" fill="var(--ink)">${fmtN(tot)}</text><text x="80" y="95" text-anchor="middle" font-size="11" fill="var(--ink-3)">cirugías</text></svg>
-  <div class="legend">${items.map(i=>`<div class="lg"><i style="background:${shiftColor(i.s)}"></i><span style="color:var(--ink);text-align:left;font-size:13px">${esc(i.s)}</span><b>${fmtN(i.v)}</b><span>${pct(i.v/tot)}</span></div>`).join("")}</div></div>`;
-  bindTips(el);
-}
-function niceMax(v){if(v<=4)return 4;const e=Math.pow(10,Math.floor(Math.log10(v))),f=v/e;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*e}
-function renderTrend(){
-  const rows=getRows(),el=$("#trend");
-  if(!rows.length){el.innerHTML=emptyHTML("Sin datos para mostrar","Ajusta los filtros o el periodo.");$("#trendSub").textContent="";return}
-  const r=periodRange(),today=+mid(new Date());
-  const tmin=Math.min(...rows.map(x=>x.t)),tmax=Math.max(...rows.map(x=>x.t));
-  const start=r&&r.from!=null?r.from:tmin,end=Math.min(r&&r.to!=null?r.to:tmax,Math.max(today,tmax));
-  const spanDays=Math.round((end-start)/DAY)+1;
-  const mode=S.trend==="auto"?(spanDays>92?"week":"day"):S.trend;
-  const buckets=[],idx=new Map();
-  if(mode==="day"){for(let t=start;t<=end;t=+addDays(new Date(t),1)){idx.set(t,buckets.length);buckets.push({t,n:0,sh:{},label:fmtS(new Date(t)),full:`${DIASL[(new Date(t).getDay()+6)%7]} ${fmtF(new Date(t))}`})}}
-  else{for(let t=+monday(new Date(start));t<=end;t=+addDays(new Date(t),7)){idx.set(t,buckets.length);buckets.push({t,n:0,sh:{},label:fmtS(new Date(t)),full:`Semana ${isoWeek(new Date(t))} · ${fmtS(new Date(t))} – ${fmtS(addDays(new Date(t),6))}`})}}
-  rows.forEach(x=>{const k=mode==="day"?x.t:+monday(x.d),b=buckets[idx.get(k)];if(b){b.n++;b.sh[x.shift]=(b.sh[x.shift]||0)+1}});
-  $("#trendSub").textContent=`${fmtN(rows.length)} cirugías · ${mode==="day"?"por día":"por semana"} · ${fmtS(new Date(start))} – ${fmtS(new Date(end))}`;
-  const W=Math.max(320,el.clientWidth||600),H=250,L=34,Rm=12,T=12,B=28,iw=W-L-Rm,ih=H-T-B;
-  const ymax=niceMax(Math.max(...buckets.map(b=>b.n),1));
-  const X=i=>buckets.length===1?L+iw/2:L+i*iw/(buckets.length-1),Y=v=>T+ih-v/ymax*ih;
-  let g="";for(let i=0;i<=4;i++){const v=ymax*i/4,y=Y(v);g+=`<line x1="${L}" x2="${W-Rm}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text class="axis" x="${L-8}" y="${y+4}" text-anchor="end">${Number.isInteger(v)?v:v.toFixed(1)}</text>`}
-  const every=Math.max(1,Math.ceil(buckets.length/Math.max(2,Math.floor(iw/70))));
-  buckets.forEach((b,i)=>{if(i%every===0||i===buckets.length-1&&buckets.length<every*3)g+=`<text class="axis" x="${X(i)}" y="${H-8}" text-anchor="middle">${b.label}</text>`});
-  const pts=buckets.map((b,i)=>`${X(i)},${Y(b.n)}`);
-  const line=`M${pts.join("L")}`,area=`${line}L${X(buckets.length-1)},${Y(0)}L${X(0)},${Y(0)}Z`;
-  const dots=buckets.length<=45?buckets.map((b,i)=>`<circle cx="${X(i)}" cy="${Y(b.n)}" r="3.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/>`).join(""):"";
-  el.innerHTML=`<svg id="trSvg" width="100%" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Tendencia de cirugías">${g}<path d="${area}" fill="var(--area)"/><path d="${line}" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${dots}<line id="trX" y1="${T}" y2="${T+ih}" stroke="var(--ink-3)" stroke-dasharray="3 3" style="display:none"/><circle id="trD" r="5.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2.5" style="display:none"/><rect x="${L}" y="${T}" width="${iw}" height="${ih}" fill="transparent" id="trHit"/></svg>`;
-  const svg=$("#trSvg"),hit=$("#trHit");
-  const mv=e=>{const rc=svg.getBoundingClientRect(),sx=(e.clientX-rc.left)*(W/rc.width);let i=buckets.length===1?0:Math.round((sx-L)/iw*(buckets.length-1));i=Math.max(0,Math.min(buckets.length-1,i));const b=buckets[i];
-    $("#trX").setAttribute("x1",X(i));$("#trX").setAttribute("x2",X(i));$("#trX").style.display="";$("#trD").setAttribute("cx",X(i));$("#trD").setAttribute("cy",Y(b.n));$("#trD").style.display="";
-    const sh=Object.entries(b.sh).sort((a,b)=>b[1]-a[1]).map(([s,v])=>`<div class="r"><span><i style="background:${shiftColor(s)}"></i>${esc(s)}</span><b>${v}</b></div>`).join("");
-    showTip(`<b>${esc(b.full)}</b><div class="r" style="margin-top:3px"><span>Total</span><b>${fmtN(b.n)}</b></div>${sh}`,e)};
-  hit.addEventListener("mousemove",mv);hit.addEventListener("mouseleave",()=>{hideTip();$("#trX").style.display="none";$("#trD").style.display="none"});
-}
-function renderHeat(){
-  const rows=getRows(),el=$("#heat");
-  if(!rows.length){el.innerHTML=emptyHTML("Sin datos para mostrar","Ajusta los filtros o el periodo.");return}
-  const sh=S.shifts.filter(s=>rows.some(r=>r.shift===s)),M=new Map();let mx=1;
-  rows.forEach(r=>{const k=r.shift+"|"+((r.d.getDay()+6)%7);const v=(M.get(k)||0)+1;M.set(k,v);if(v>mx)mx=v});
-  const dark=document.documentElement.dataset.theme==="dark",c0=dark?[33,56,86]:[205,226,251],c1=dark?[85,152,231]:[16,66,129];
-  const mix=t=>c0.map((c,i)=>Math.round(c+(c1[i]-c)*t));
-  const lum=([r,g,b])=>(0.299*r+0.587*g+0.114*b)/255;
-  let h=`<div class="heat" style="grid-template-columns:minmax(90px,auto) repeat(7,1fr)"><div></div>${DIAS.map(d=>`<div class="hh">${d}</div>`).join("")}`;
-  sh.forEach(s=>{h+=`<div class="rl"><i style="width:9px;height:9px;border-radius:3px;background:${shiftColor(s)};flex:none"></i>${esc(s)}</div>`;
-    for(let d=0;d<7;d++){const v=M.get(s+"|"+d)||0,t=v/mx,c=mix(v?0.12+0.88*t:0),tc=lum(c)>0.55?"#13201c":"#fff";
-      h+=`<div class="cell" style="background:${v?`rgb(${c})`:"var(--surface-2)"};color:${v?tc:"var(--ink-3)"}" data-tip="<b>${esc(s)} · ${DIASL[d]}</b><br>${v} cirugía${v===1?"":"s"}">${v||"·"}</div>`}});
-  h+=`</div><div class="hscale">Menos<i style="background:linear-gradient(90deg,rgb(${mix(.12)}),rgb(${mix(1)}))"></i>Más (máx. ${mx})</div>`;
-  el.innerHTML=h;bindTips(el);
-}
-
-/* ====================== tabla ====================== */
-const COLS=[["t","Fecha"],["unit","Unidad hospitalaria"],["room","Quirófano / sala"],["shift","Turno"],["proc","Procedimiento"]];
-function renderTable(){
-  const rows=getRows().slice(),{k,d}=S.sort;
-  rows.sort((a,b)=>{const c=k==="t"?a.t-b.t:String(a[k]).localeCompare(String(b[k]),"es",{numeric:true});return (c||b.t-a.t)*d});
-  const pages=Math.max(1,Math.ceil(rows.length/S.PAGE));S.page=Math.min(S.page,pages-1);
-  const sl=rows.slice(S.page*S.PAGE,(S.page+1)*S.PAGE);
-  $("#tblSub").textContent=`${fmtN(rows.length)} registros con los filtros actuales`;
-  $("#tbl").innerHTML=`<thead><tr>${COLS.map(([c,l])=>`<th class="sort" data-k="${c}" aria-sort="${k===c?(d>0?"ascending":"descending"):"none"}">${l} ${k===c?(d>0?"▲":"▼"):""}</th>`).join("")}</tr></thead><tbody>`+
-    (sl.length?sl.map(x=>`<tr><td>${fmtF(x.d)} <span style="color:var(--ink-3)">${DIAS[(x.d.getDay()+6)%7]}</span></td><td><div class="u"><i style="background:${unitColor(x.unit)}"></i>${esc(x.unit)}</div></td><td>${esc(x.room)}</td><td><span class="pill"><i style="background:${shiftColor(x.shift)}"></i>${esc(x.shift)}</span></td><td>${esc(x.proc)}</td></tr>`).join(""):`<tr><td colspan="5">${emptyHTML("Sin registros","Ajusta los filtros o el periodo.")}</td></tr>`)+`</tbody>`;
-  $("#pager").innerHTML=rows.length?`<span>${S.page*S.PAGE+1}–${Math.min(rows.length,(S.page+1)*S.PAGE)} de ${fmtN(rows.length)}</span><button class="btn sm" id="pPrev" ${S.page===0?"disabled":""}>‹ Anterior</button><button class="btn sm" id="pNext" ${S.page>=pages-1?"disabled":""}>Siguiente ›</button>`:"";
-}
-function exportCsv(nominal){
-  const rows=getRows().sort((a,b)=>a.t-b.t);
-  const q=v=>`"${String(v??"").replace(/"/g,'""')}"`;
-  const cell=(v,nss)=>nss&&/^\d{6,}$/.test(v)?`="${v}"`:q(v);
-  const head=nominal?["Marca temporal","Nombre del paciente","Número de Seguro Social","Agregado","Unidad hospitalaria","Fecha de realización","Turno","Procedimiento","Sala"]:["Fecha","Unidad","Sala","Turno","Procedimiento"];
-  const line=r=>nominal?[q(r.ts),q(r.pac),cell(r.nss,true),q(r.agr),q(r.unit),q(fmtF(r.d)),q(r.shift),q(r.proc),q(r.room)]:[fmtF(r.d),r.unit,r.room,r.shift,r.proc].map(q);
-  const csv="\uFEFF"+[head.map(q).join(","),...rows.map(r=>line(r).join(","))].join("\n");
-  const name="jornadas_quirurgicas_"+dkey(new Date())+".csv", msg=" ("+fmtN(rows.length)+" filas"+(nominal?", incluye datos del paciente":"")+")";
-  if(window.claude&&window.claude.use){ navigator.clipboard.writeText(csv).then(()=>toast("CSV copiado al portapapeles"+msg),()=>toast("No se pudo copiar el CSV")); return }
-  try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download=name;document.body.appendChild(a);a.click();a.remove();toast("Exportación generada"+msg)}
-  catch(e){toast("Tu navegador bloqueó la descarga")}
-}
-
-/* ====================== estado en vivo y banners ====================== */
-function renderLive(){
-  const L=$("#live");L.className="live"+(S.demo?" demo":S.lastErr?" err":"");
-  let t;
-  if(S.demo) t="Modo demostración · datos de ejemplo";
-  else if(S.loading) t="Actualizando…";
-  else if(S.lastErr&&!S.lastOk) t="Sin conexión a la hoja";
-  else if(S.lastErr) t=`Sin conexión · últimos datos ${S.lastOk.toLocaleTimeString("es-MX",{hour:"2-digit",minute:"2-digit"})}`;
-  else if(S.lastOk) t=`En vivo · actualizado ${S.lastOk.toLocaleTimeString("es-MX",{hour:"2-digit",minute:"2-digit",second:"2-digit"})} · próx. ${Math.max(0,S.countdown)}s`;
-  else t="Esperando fuente de datos";
-  $("#liveTxt").textContent=t;
-}
-function renderBanner(){
-  const b=$("#banner");
-  if(S.demo){b.className="banner demo";b.hidden=false;b.innerHTML=`<div><span>⚠️</span><span><b>Estás viendo datos de ejemplo.</b> Las cifras, unidades y metas son ficticias y sirven solo para conocer el tablero.</span><button class="btn sm" id="bExit">Salir de la demostración</button></div>`;return}
-  if(S.lastErr&&!S.lastOk){b.className="banner err";b.hidden=false;
-    b.innerHTML=`<div><span>🔌</span><span><b>${cfg.url?"No se pudieron cargar los datos.":"Falta conectar la hoja de respuestas."}</b> ${esc(S.lastErr)}</span><button class="btn sm" id="bDemo">Ver demostración</button></div>`;return}
-  if(S.lastErr){b.className="banner err";b.hidden=false;b.innerHTML=`<div><span>⚠️</span><span><b>No se pudo actualizar.</b> ${esc(S.lastErr)} Se muestran los últimos datos recibidos; se reintentará automáticamente.</span></div>`;return}
-  if(S.lastOk&&!S.hasData){b.className="banner";b.hidden=false;b.innerHTML=`<div><span>📭</span><span><b>La hoja está conectada pero aún no tiene registros.</b> En cuanto se capture la primera cirugía en el formulario aparecerá aquí automáticamente.</span></div>`;return}
-  b.hidden=true;
-}
-
-/* ====================== render global ====================== */
-function renderAll(){
-  renderLive();renderBanner();renderPeriod();renderShiftBtns();renderUnitChips();
-  msRoom.refresh();msProc.refresh();renderTags();
-  renderKPIs();renderGoals();renderTrend();renderDonut();renderUnitBars();renderRoomBars();renderProcBars();renderHeat();renderTable();
-  $("#foot").textContent=S.rows.length?`${fmtN(S.rows.length)} registros cargados`:"";
-}
-
-/* ====================== eventos ====================== */
-$("#fPeriod").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.period.mode=b.dataset.p;S.page=0;renderAll()};
-$("#dFrom").onchange=e=>{S.period.from=e.target.value;S.page=0;renderAll()};
-$("#dTo").onchange=e=>{S.period.to=e.target.value;S.page=0;renderAll()};
-$("#fShift").onclick=e=>{const b=e.target.closest("button");if(!b)return;const s=b.dataset.s;S.f.shifts.has(s)?S.f.shifts.delete(s):S.f.shifts.add(s);S.page=0;renderAll()};
-$("#fUnit").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.all){S.f.units.clear();S.page=0;renderAll();return}const s=b.dataset.u;const was=S.f.units.size===1&&S.f.units.has(s);S.f.units.clear();if(!was)S.f.units.add(s);S.page=0;renderAll()};
-let qt;$("#fQ").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.f.q=tidy(e.target.value);S.page=0;renderAll()},180)};
-$("#btnClear").onclick=()=>{Object.values(S.f).forEach(v=>v instanceof Set&&v.clear());S.f.q="";$("#fQ").value="";S.period={mode:"all",from:"",to:""};$("#dFrom").value=$("#dTo").value="";S.page=0;renderAll()};
-$("#tags").onclick=e=>{const b=e.target.closest("button");if(!b)return;const g=b.dataset.g;if(g==="q"){S.f.q="";$("#fQ").value=""}else S.f[g].delete(b.dataset.v);S.page=0;renderAll()};
-$("#trendSeg").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.trend=b.dataset.m;$$("#trendSeg button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderTrend()};
-$("#wPrev").onclick=()=>{S.weekStart=addDays(S.weekStart,-7);renderGoals();renderKPIs()};
-$("#wNext").onclick=()=>{if(+S.weekStart<+monday(new Date())){S.weekStart=addDays(S.weekStart,7);renderGoals();renderKPIs()}};
-$("#wNow").onclick=()=>{S.weekStart=monday(new Date());renderGoals();renderKPIs()};
-$("#tbl").onclick=e=>{const th=e.target.closest("th.sort");if(!th)return;const k=th.dataset.k;S.sort=S.sort.k===k?{k,d:-S.sort.d}:{k,d:k==="t"?-1:1};renderTable()};
-$("#pager").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.page+=b.id==="pNext"?1:-1;renderTable()};
-$("#btnCsv").onclick=()=>{ if(!S.nominal) toast("Aviso: la hoja leída no trae nombre ni NSS del paciente"); exportCsv(S.nominal) };
-$("#btnRefresh").onclick=()=>{S.demo?toast("Modo demostración: no hay fuente que actualizar"):load(true)};
-$("#btnTheme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=d;lsSet("theme",d);renderAll()};
-$("#banner").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.id==="bDemo")enterDemo();if(b.id==="bExit")exitDemo()};
-window.addEventListener("resize",(()=>{let t;return()=>{clearTimeout(t);t=setTimeout(renderTrend,120)}})());
-
-/* demo */
-function enterDemo(){S.demo=true;S.nominal=true;S.lastErr=null;setRows(demoRows());S.weekStart=addDays(monday(new Date()),-7);renderAll()}
-function exitDemo(){S.demo=false;S.lastOk=null;setRows([]);Object.values(S.f).forEach(v=>v instanceof Set&&v.clear());load()}
-
-let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3200)}
-
-/* ====================== arranque ====================== */
-(function init(){
-  const th=lsGet("theme",null)||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
-  document.documentElement.dataset.theme=th;
-  msRoom=new Multi($("#msRoom"),"Salas","rooms",()=>S.rooms);
-  msProc=new Multi($("#msProc"),"Procedimientos","procs",()=>S.procs);
-  renderAll();
-  if(new URLSearchParams(location.search).has("demo")||location.hash==="#demo") enterDemo();
-  else load();
-  startTimer();
-})();
+const COLORS=["var(--s1)","var(--s2)","var(--s3)","var(--s4)","var(--s5)","var(--s7)"];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>n==null||isNaN(n)?"–":Number(n).toLocaleString("es-MX");
+const pct=v=>v==null?"–":(Math.round(v*1000)/10).toLocaleString("es-MX",{maximumFractionDigits:1})+"%";
+let D=null,sel=null,timer=null,lastOk=null,lastErr=null;
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function units(){const m={};(D&&D.unidades||[]).forEach(u=>m[u.unidad]=u);return CATALOGO.map(n=>Object.assign({unidad:n,planeados:null,intervenidos:null,pacientes:0,cirugias:{}},m[n]||{}))}
+function view(){const all=units();return sel?all.filter(u=>u.unidad===sel):all}
+function logro(u){return u.planeados>0&&u.intervenidos!=null?u.intervenidos/u.planeados:null}
+function estado(u){const l=logro(u);if(l==null)return["none","Sin datos"];if(l>=1)return["good","Meta cumplida"];if(l>=CONFIG.UMBRAL_EN_AVANCE)return["warn","En avance"];return["crit","Rezago"]}
+function tot(list){let p=0,i=0,c=0,hp=false;list.forEach(u=>{if(u.planeados!=null){p+=u.planeados;hp=true}if(u.intervenidos!=null)i+=u.intervenidos;c+=u.pacientes||0});return{p:hp?p:null,i,c,l:p>0?i/p:null}}
+function renderChips(){const all=units();const el=$("#fUnit");let h='<button class="chip all" aria-pressed="'+(sel==null)+'" data-u="">Todas las unidades <span class="n">'+all.length+'</span></button>';
+ all.forEach((u,k)=>{h+='<button class="chip'+(u.pacientes?'':' zero')+'" aria-pressed="'+(sel===u.unidad)+'" data-u="'+esc(u.unidad)+'"><i class="sw" style="background:'+COLORS[k]+'"></i>'+esc(u.unidad)+' <span class="n">'+(u.pacientes||0)+'</span></button>'});
+ el.innerHTML=h;el.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{sel=b.dataset.u||null;render()})}
+function renderKPIs(){const t=tot(view());const pend=t.p==null?null:Math.max(0,t.p-t.i);
+ const k=(a,v,d)=>'<div class="kpi"><div class="k">'+a+'</div><div class="v">'+v+'</div><div class="d">'+d+'</div></div>';
+ $("#kpis").innerHTML=k("Pacientes planeados",fmt(t.p),sel?esc(sel):"Suma de las unidades")+k("Intervenidos",fmt(t.i),"Reportados por las unidades")+k("% de logro",t.l==null?"–":pct(t.l),t.p==null?"Esperando planeados":"Intervenidos / planeados")+k("Pendientes",fmt(pend),"Planeados menos intervenidos")+k("Pacientes en censo",fmt(t.c),"Registros nominales capturados")}
+function renderTable(){const v=view();if(!v.length){$("#tbl").innerHTML='<div class="empty"><div><b>Sin datos</b></div></div>';return}
+ let h='<table class="tbl"><thead><tr><th>Unidad</th><th class="num">Planeados</th><th class="num">Intervenidos</th><th>% de logro</th><th class="num">En censo</th><th>Estado</th></tr></thead><tbody>';
+ v.forEach(u=>{const k=CATALOGO.indexOf(u.unidad),l=logro(u),[c,tx]=estado(u),w=l==null?0:Math.min(100,l*100);
+  h+='<tr><td><span class="u"><i style="background:'+COLORS[k]+'"></i>'+esc(u.unidad)+'</span></td><td class="num">'+fmt(u.planeados)+'</td><td class="num">'+fmt(u.intervenidos)+'</td><td><div class="pb"><div class="bar"><i style="width:'+w+'%;background:var(--'+(c==="none"?"s-other":c==="good"?"good":c==="warn"?"warn":"crit")+')"></i></div><b>'+pct(l)+'</b></div></td><td class="num">'+fmt(u.pacientes||0)+'</td><td><span class="st '+c+'">'+tx+'</span></td></tr>'});
+ $("#tbl").innerHTML=h+'</tbody></table>'}
+function hb(el,items,max,fmtv){if(!items.length){el.innerHTML='<div class="empty"><div><b>Sin datos todavía</b>Aparecerán cuando las unidades capturen.</div></div>';return}
+ el.innerHTML='<div class="hb">'+items.map(i=>'<div class="hr"><span class="l" title="'+esc(i.l)+'">'+esc(i.l)+'</span><span class="tr"><span class="br" style="display:block;width:'+Math.max(2,max?i.v/max*100:0)+'%;background:'+i.c+'"></span></span><span class="vv">'+fmtv(i.v)+'</span></div>').join("")+'</div>'}
+function renderBars(){const v=view();
+ hb($("#bLogro"),v.filter(u=>logro(u)!=null).map(u=>({l:u.unidad,v:logro(u),c:COLORS[CATALOGO.indexOf(u.unidad)]})),Math.max(1,...v.map(u=>logro(u)||0)),pct);
+ const m={};v.forEach(u=>Object.entries(u.cirugias||{}).forEach(([k,n])=>m[k]=(m[k]||0)+n));
+ const it=Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,12).map(([l,n],k)=>({l,v:n,c:COLORS[k%COLORS.length]}));
+ $("#tcSub").textContent=it.length?"Pacientes registrados en el censo nominal (máx. 12)":"Pacientes registrados en el censo nominal";
+ hb($("#bTipo"),it,Math.max(1,...it.map(x=>x.v)),fmtN)}
+const fmtN=n=>fmt(n);
+function renderLive(){const live=$("#live"),tx=$("#liveTxt");live.classList.remove("err");
+ if(lastErr&&!lastOk){live.classList.add("err");tx.textContent="Sin conexión con los datos";return}
+ const g=D&&D.generado?new Date(D.generado):null;
+ tx.textContent=g&&!isNaN(g)?"Datos del "+g.toLocaleString("es-MX",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}):"Datos cargados";
+ if(lastErr)live.classList.add("err")}
+function renderBanner(){const b=$("#banner");if(lastErr){b.hidden=false;b.className="banner err";b.innerHTML='<div><span><b>No se pudieron actualizar los datos.</b></span><span>'+esc(lastErr)+(lastOk?' Se muestra la última información recibida.':'')+'</span></div>'}else if(D&&!units().some(u=>u.pacientes||u.planeados!=null)){b.hidden=false;b.className="banner demo";b.innerHTML='<div><span><b>Aún no hay capturas.</b></span><span>El tablero se llenará conforme las unidades registren sus pacientes.</span></div>'}else b.hidden=true}
+function render(){renderChips();renderKPIs();renderTable();renderBars();renderLive();renderBanner()}
+async function load(manual){try{const r=await fetch(CONFIG.DATA_URL+"?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);D=await r.json();lastOk=Date.now();lastErr=null;if(manual)toast("Datos actualizados")}catch(e){lastErr=String(e&&e.message||e)}render()}
+function csv(){const rows=[["Unidad","Planeados","Intervenidos","% Logro","Pacientes en censo"]];units().forEach(u=>{const l=logro(u);rows.push([u.unidad,u.planeados==null?"":u.planeados,u.intervenidos==null?"":u.intervenidos,l==null?"":(Math.round(l*1000)/10)+"%",u.pacientes||0])});
+ const t="\ufeff"+rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(",")).join("\r\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:"text/csv;charset=utf-8"}));a.download="resumen_jornadas_"+new Date().toISOString().slice(0,10)+".csv";document.body.appendChild(a);a.click();a.remove()}
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3000)}
+(function init(){const th=lsGet("jq-theme");if(th)document.documentElement.dataset.theme=th;
+ $("#btnTheme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=d;lsSet("jq-theme",d)};
+ $("#btnRefresh").onclick=()=>load(true);$("#btnCsv").onclick=csv;
+ render();load();timer=setInterval(load,CONFIG.REFRESH_SECONDS*1000)})();
 </script>
 </body>
 </html>
