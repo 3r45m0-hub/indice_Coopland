@@ -1,1 +1,57 @@
-{"generado": "2026-11-04T22:26:22Z", "unidades": [{"unidad": "HGZ 1", "planeados": null, "intervenidos": null, "pacientes": 0, "cirugias": {}}, {"unidad": "HGZ 2", "planeados": null, "intervenidos": null, "pacientes": 0, "cirugias": {}}, {"unidad": "HGZ 6", "planeados": 10, "intervenidos": null, "pacientes": 0, "cirugias": {}}, {"unidad": "HGZ 50", "planeados": null, "intervenidos": null, "pacientes": 0, "cirugias": {}}, {"unidad": "HGSZ 4", "planeados": null, "intervenidos": null, "pacientes": 0, "cirugias": {}}, {"unidad": "HGSZ 9", "planeados": 10, "intervenidos": null, "pacientes": 10, "cirugias": {"Colecistectomia": 4, "Hernioplastia": 6}}]}
+{
+ "generado": "2026-11-05T17:23:57Z",
+ "unidades": [
+  {
+   "unidad": "HGZ 1",
+   "planeados": 2,
+   "intervenidos": 2,
+   "pacientes": 2,
+   "cirugias": {
+    "Hernioplastia": 1,
+    "Histerectomia": 1
+   }
+  },
+  {
+   "unidad": "HGZ 2",
+   "planeados": null,
+   "intervenidos": null,
+   "pacientes": 3,
+   "cirugias": {
+    "Artoscopia de rodilla + reparacion meniscal": 1,
+    "Artroplastia total de rodilla": 1,
+    "Artroplastia total de cadera": 1
+   }
+  },
+  {
+   "unidad": "HGZ 6",
+   "planeados": 10,
+   "intervenidos": null,
+   "pacientes": 0,
+   "cirugias": {}
+  },
+  {
+   "unidad": "HGZ 50",
+   "planeados": null,
+   "intervenidos": null,
+   "pacientes": 0,
+   "cirugias": {}
+  },
+  {
+   "unidad": "HGSZ 4",
+   "planeados": null,
+   "intervenidos": null,
+   "pacientes": 1,
+   "cirugias": {}
+  },
+  {
+   "unidad": "HGSZ 9",
+   "planeados": 10,
+   "intervenidos": null,
+   "pacientes": 10,
+   "cirugias": {
+    "Colecistectomia": 4,
+    "Hernioplastia": 6
+   }
+  }
+ ]
+}
