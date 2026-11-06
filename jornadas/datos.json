@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-06T13:25:32Z",
+ "generado": "2026-11-06T16:24:03Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -17,7 +17,7 @@
    "intervenidos": 3,
    "pacientes": 6,
    "cirugias": {
-    "Artoscopia de rodilla + reparación meniscal": 1,
+    "Artoscopia de rodilla + reparacion meniscal": 1,
     "Artroplastia total de rodilla": 1,
     "Artroplastia total de cadera": 1,
     "Plastia inguinal": 1,
