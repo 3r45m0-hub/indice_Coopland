@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-05T17:23:57Z",
+ "generado": "2026-11-06T13:25:32Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -13,13 +13,15 @@
   },
   {
    "unidad": "HGZ 2",
-   "planeados": null,
-   "intervenidos": null,
-   "pacientes": 3,
+   "planeados": 3,
+   "intervenidos": 3,
+   "pacientes": 6,
    "cirugias": {
-    "Artoscopia de rodilla + reparacion meniscal": 1,
+    "Artoscopia de rodilla + reparación meniscal": 1,
     "Artroplastia total de rodilla": 1,
-    "Artroplastia total de cadera": 1
+    "Artroplastia total de cadera": 1,
+    "Plastia inguinal": 1,
+    "Artroscopia de rodilla": 2
    }
   },
   {
