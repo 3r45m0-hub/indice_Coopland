@@ -1,33 +1,19 @@
 {
- "generado": "2026-11-09T18:24:14Z",
+ "generado": "2026-11-09T20:25:11Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
-   "pacientes": 2,
-   "cirugias": {
-    "Hernioplastia": 1,
-    "Histerectomia": 1
-   }
+   "pacientes": 0,
+   "cirugias": {}
   },
   {
    "unidad": "HGZ 2",
-   "planeados": 18,
-   "intervenidos": 14,
-   "pacientes": 20,
-   "cirugias": {
-    "Artoscopia de rodilla + reparacion meniscal": 1,
-    "Artroplastia total de rodilla": 4,
-    "Artroplastia total de cadera": 1,
-    "Plastia inguinal": 1,
-    "Artroscopia de rodilla": 2,
-    "Herniopalstia": 3,
-    "Colecisectomia": 1,
-    "Colecistectomia": 2,
-    "Artroscopia": 4,
-    "Artoroscopia": 1
-   }
+   "planeados": null,
+   "intervenidos": null,
+   "pacientes": 0,
+   "cirugias": {}
   },
   {
    "unidad": "HGZ 6",
