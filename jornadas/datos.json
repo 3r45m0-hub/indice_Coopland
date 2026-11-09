@@ -7,7 +7,10 @@
    "intervenidos": 2,
    "jornadas": 1,
    "pacientes": 0,
-   "cirugias": {}
+   "cirugias": {},
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   },
   {
    "unidad": "HGZ 2",
@@ -15,7 +18,10 @@
    "intervenidos": 14,
    "jornadas": 2,
    "pacientes": 0,
-   "cirugias": {}
+   "cirugias": {},
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   },
   {
    "unidad": "HGZ 6",
@@ -23,7 +29,10 @@
    "intervenidos": null,
    "jornadas": 1,
    "pacientes": 0,
-   "cirugias": {}
+   "cirugias": {},
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   },
   {
    "unidad": "HGZ 50",
@@ -31,7 +40,10 @@
    "intervenidos": null,
    "jornadas": 0,
    "pacientes": 0,
-   "cirugias": {}
+   "cirugias": {},
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   },
   {
    "unidad": "HGSZ 4",
@@ -39,7 +51,10 @@
    "intervenidos": null,
    "jornadas": 0,
    "pacientes": 1,
-   "cirugias": {}
+   "cirugias": {},
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   },
   {
    "unidad": "HGSZ 9",
@@ -50,7 +65,10 @@
    "cirugias": {
     "Colecistectomía": 4,
     "Hernioplastia": 6
-   }
+   },
+   "turnos": {},
+   "realizados": 0,
+   "no_realizados": 0
   }
  ]
 }
