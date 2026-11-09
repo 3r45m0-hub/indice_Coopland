@@ -1,17 +1,19 @@
 {
- "generado": "2026-11-09T20:25:11Z",
+ "generado": "2026-11-09T21:55:59Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
+   "jornadas": 1,
    "pacientes": 0,
    "cirugias": {}
   },
   {
    "unidad": "HGZ 2",
-   "planeados": null,
-   "intervenidos": null,
+   "planeados": 18,
+   "intervenidos": 14,
+   "jornadas": 2,
    "pacientes": 0,
    "cirugias": {}
   },
@@ -19,6 +21,7 @@
    "unidad": "HGZ 6",
    "planeados": 10,
    "intervenidos": null,
+   "jornadas": 1,
    "pacientes": 0,
    "cirugias": {}
   },
@@ -26,6 +29,7 @@
    "unidad": "HGZ 50",
    "planeados": null,
    "intervenidos": null,
+   "jornadas": 0,
    "pacientes": 0,
    "cirugias": {}
   },
@@ -33,6 +37,7 @@
    "unidad": "HGSZ 4",
    "planeados": null,
    "intervenidos": null,
+   "jornadas": 0,
    "pacientes": 1,
    "cirugias": {}
   },
@@ -40,9 +45,10 @@
    "unidad": "HGSZ 9",
    "planeados": 10,
    "intervenidos": null,
+   "jornadas": 1,
    "pacientes": 10,
    "cirugias": {
-    "Colecistectomia": 4,
+    "Colecistectomía": 4,
     "Hernioplastia": 6
    }
   }

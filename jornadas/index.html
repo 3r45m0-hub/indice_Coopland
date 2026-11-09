@@ -270,21 +270,21 @@ const pct=v=>v==null?"–":(Math.round(v*1000)/10).toLocaleString("es-MX",{maxim
 let D=null,sel=null,timer=null,lastOk=null,lastErr=null;
 function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-function units(){const m={};(D&&D.unidades||[]).forEach(u=>m[u.unidad]=u);return CATALOGO.map(n=>Object.assign({unidad:n,planeados:null,intervenidos:null,pacientes:0,cirugias:{}},m[n]||{}))}
+function units(){const m={};(D&&D.unidades||[]).forEach(u=>m[u.unidad]=u);return CATALOGO.map(n=>Object.assign({unidad:n,planeados:null,intervenidos:null,pacientes:0,jornadas:0,cirugias:{}},m[n]||{}))}
 function view(){const all=units();return sel?all.filter(u=>u.unidad===sel):all}
 function logro(u){return u.planeados>0&&u.intervenidos!=null?u.intervenidos/u.planeados:null}
 function estado(u){const l=logro(u);if(l==null)return["none","Sin datos"];if(l>=1)return["good","Meta cumplida"];if(l>=CONFIG.UMBRAL_EN_AVANCE)return["warn","En avance"];return["crit","Rezago"]}
-function tot(list){let p=0,i=0,c=0,hp=false;list.forEach(u=>{if(u.planeados!=null){p+=u.planeados;hp=true}if(u.intervenidos!=null)i+=u.intervenidos;c+=u.pacientes||0});return{p:hp?p:null,i,c,l:p>0?i/p:null}}
+function tot(list){let p=0,i=0,c=0,j=0,hp=false;list.forEach(u=>{j+=u.jornadas||0;if(u.planeados!=null){p+=u.planeados;hp=true}if(u.intervenidos!=null)i+=u.intervenidos;c+=u.pacientes||0});return{p:hp?p:null,i,c,j,l:p>0?i/p:null}}
 function renderChips(){const all=units();const el=$("#fUnit");let h='<button class="chip all" aria-pressed="'+(sel==null)+'" data-u="">Todas las unidades <span class="n">'+all.length+'</span></button>';
  all.forEach((u,k)=>{h+='<button class="chip'+(u.pacientes?'':' zero')+'" aria-pressed="'+(sel===u.unidad)+'" data-u="'+esc(u.unidad)+'"><i class="sw" style="background:'+COLORS[k]+'"></i>'+esc(u.unidad)+' <span class="n">'+(u.pacientes||0)+'</span></button>'});
  el.innerHTML=h;el.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{sel=b.dataset.u||null;render()})}
 function renderKPIs(){const t=tot(view());const pend=t.p==null?null:Math.max(0,t.p-t.i);
  const k=(a,v,d)=>'<div class="kpi"><div class="k">'+a+'</div><div class="v">'+v+'</div><div class="d">'+d+'</div></div>';
- $("#kpis").innerHTML=k("Pacientes planeados",fmt(t.p),sel?esc(sel):"Suma de las unidades")+k("Intervenidos",fmt(t.i),"Reportados por las unidades")+k("% de logro",t.l==null?"–":pct(t.l),t.p==null?"Esperando planeados":"Intervenidos / planeados")+k("Pendientes",fmt(pend),"Planeados menos intervenidos")+k("Pacientes en censo",fmt(t.c),"Registros nominales capturados")}
+ $("#kpis").innerHTML=k("Pacientes planeados",fmt(t.p),sel?esc(sel):"Suma de las unidades")+k("Intervenidos",fmt(t.i),"Reportados por las unidades")+k("% de logro",t.l==null?"–":pct(t.l),t.p==null?"Esperando planeados":"Intervenidos / planeados")+k("Pendientes",fmt(pend),"Planeados menos intervenidos")+k("Jornadas registradas",fmt(t.j),"Filas capturadas en Resumen")+k("Pacientes en censo",fmt(t.c),"Registros nominales capturados")}
 function renderTable(){const v=view();if(!v.length){$("#tbl").innerHTML='<div class="empty"><div><b>Sin datos</b></div></div>';return}
- let h='<table class="tbl"><thead><tr><th>Unidad</th><th class="num">Planeados</th><th class="num">Intervenidos</th><th>% de logro</th><th class="num">En censo</th><th>Estado</th></tr></thead><tbody>';
+ let h='<table class="tbl"><thead><tr><th>Unidad</th><th class="num">Planeados</th><th class="num">Intervenidos</th><th>% de logro</th><th class="num">Jornadas</th><th class="num">En censo</th><th>Estado</th></tr></thead><tbody>';
  v.forEach(u=>{const k=CATALOGO.indexOf(u.unidad),l=logro(u),[c,tx]=estado(u),w=l==null?0:Math.min(100,l*100);
-  h+='<tr><td><span class="u"><i style="background:'+COLORS[k]+'"></i>'+esc(u.unidad)+'</span></td><td class="num">'+fmt(u.planeados)+'</td><td class="num">'+fmt(u.intervenidos)+'</td><td><div class="pb"><div class="bar"><i style="width:'+w+'%;background:var(--'+(c==="none"?"s-other":c==="good"?"good":c==="warn"?"warn":"crit")+')"></i></div><b>'+pct(l)+'</b></div></td><td class="num">'+fmt(u.pacientes||0)+'</td><td><span class="st '+c+'">'+tx+'</span></td></tr>'});
+  h+='<tr><td><span class="u"><i style="background:'+COLORS[k]+'"></i>'+esc(u.unidad)+'</span></td><td class="num">'+fmt(u.planeados)+'</td><td class="num">'+fmt(u.intervenidos)+'</td><td><div class="pb"><div class="bar"><i style="width:'+w+'%;background:var(--'+(c==="none"?"s-other":c==="good"?"good":c==="warn"?"warn":"crit")+')"></i></div><b>'+pct(l)+'</b></div></td><td class="num">'+fmt(u.jornadas||0)+'</td><td class="num">'+fmt(u.pacientes||0)+'</td><td><span class="st '+c+'">'+tx+'</span></td></tr>'});
  $("#tbl").innerHTML=h+'</tbody></table>'}
 function hb(el,items,max,fmtv){if(!items.length){el.innerHTML='<div class="empty"><div><b>Sin datos todavía</b>Aparecerán cuando las unidades capturen.</div></div>';return}
  el.innerHTML='<div class="hb">'+items.map(i=>'<div class="hr"><span class="l" title="'+esc(i.l)+'">'+esc(i.l)+'</span><span class="tr"><span class="br" style="display:block;width:'+Math.max(2,max?i.v/max*100:0)+'%;background:'+i.c+'"></span></span><span class="vv">'+fmtv(i.v)+'</span></div>').join("")+'</div>'}
