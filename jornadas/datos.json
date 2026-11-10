@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-09T21:55:59Z",
+ "generado": "2026-11-10T19:23:54Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -7,10 +7,10 @@
    "intervenidos": 2,
    "jornadas": 1,
    "pacientes": 0,
-   "cirugias": {},
-   "turnos": {},
    "realizados": 0,
-   "no_realizados": 0
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
   },
   {
    "unidad": "HGZ 2",
@@ -18,10 +18,10 @@
    "intervenidos": 14,
    "jornadas": 2,
    "pacientes": 0,
-   "cirugias": {},
-   "turnos": {},
    "realizados": 0,
-   "no_realizados": 0
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
   },
   {
    "unidad": "HGZ 6",
@@ -29,10 +29,10 @@
    "intervenidos": null,
    "jornadas": 1,
    "pacientes": 0,
-   "cirugias": {},
-   "turnos": {},
    "realizados": 0,
-   "no_realizados": 0
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
   },
   {
    "unidad": "HGZ 50",
@@ -40,10 +40,10 @@
    "intervenidos": null,
    "jornadas": 0,
    "pacientes": 0,
-   "cirugias": {},
-   "turnos": {},
    "realizados": 0,
-   "no_realizados": 0
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
   },
   {
    "unidad": "HGSZ 4",
@@ -51,10 +51,10 @@
    "intervenidos": null,
    "jornadas": 0,
    "pacientes": 1,
-   "cirugias": {},
-   "turnos": {},
    "realizados": 0,
-   "no_realizados": 0
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
   },
   {
    "unidad": "HGSZ 9",
@@ -62,13 +62,13 @@
    "intervenidos": null,
    "jornadas": 1,
    "pacientes": 10,
+   "realizados": 0,
+   "no_realizados": 0,
+   "turnos": {},
    "cirugias": {
     "Colecistectomía": 4,
-    "Hernioplastia": 6
-   },
-   "turnos": {},
-   "realizados": 0,
-   "no_realizados": 0
+    "Hernioplastía": 6
+   }
   }
  ]
 }
