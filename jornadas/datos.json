@@ -1,49 +1,84 @@
 {
- "generado": "2026-11-10T19:23:54Z",
+ "generado": "2026-11-10T22:24:47Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
    "jornadas": 1,
-   "pacientes": 0,
+   "pacientes": 25,
    "realizados": 0,
    "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
+   "turnos": {
+    "Matutino": 4,
+    "Nocturno": 19,
+    "Vespertino": 2
+   },
+   "cirugias": {
+    "Hernioplastía": 13,
+    "Histerectomía": 12
+   }
   },
   {
    "unidad": "HGZ 2",
    "planeados": 18,
    "intervenidos": 14,
    "jornadas": 2,
-   "pacientes": 0,
+   "pacientes": 22,
    "realizados": 0,
    "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
+   "turnos": {
+    "Jornada acumulada": 10,
+    "Matutino": 6,
+    "Vespertino": 6
+   },
+   "cirugias": {
+    "Artroscopia de rodilla": 1,
+    "Artroscopia de rodilla (implante por confirmar)": 6,
+    "Artroscopia de rodilla + plastia LCA": 2,
+    "Artroscopia de rodilla + remodelación meniscal": 1,
+    "Artroscopia rodilla + remodelación meniscal": 1,
+    "Reemplazo articular de cadera": 2,
+    "Reemplazo articular de rodilla": 9
+   }
   },
   {
    "unidad": "HGZ 6",
    "planeados": 10,
    "intervenidos": null,
    "jornadas": 1,
-   "pacientes": 0,
+   "pacientes": 10,
    "realizados": 0,
    "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
+   "turnos": {
+    "Jornada acumulada": 1,
+    "Matutino": 2,
+    "Nocturno": 6,
+    "Vespertino": 1
+   },
+   "cirugias": {
+    "Plastia inguinal": 5,
+    "Plastia umbilical": 5
+   }
   },
   {
    "unidad": "HGZ 50",
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 0,
+   "pacientes": 58,
    "realizados": 0,
    "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
+   "turnos": {
+    "Matutino": 41,
+    "Vespertino": 3
+   },
+   "cirugias": {
+    "Faco": 44,
+    "Hernia": 3,
+    "Hernia inguinal": 4,
+    "Hernia umbilical": 7
+   }
   },
   {
    "unidad": "HGSZ 4",
