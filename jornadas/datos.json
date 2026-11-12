@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-11T22:25:12Z",
+ "generado": "2026-11-12T14:25:08Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -16,7 +16,7 @@
    },
    "cirugias": {
     "Hernioplastía": 13,
-    "Histerectomía": 12
+    "Histerectomia": 12
    }
   },
   {
@@ -39,7 +39,7 @@
     "Artroscopia de rodilla + remodelación meniscal": 1,
     "Artroscopia rodilla + remodelación meniscal": 1,
     "Artroscopia de rodilla": 1,
-    "Artroscopia de rodilla + plastia lca": 2
+    "Artroscopia de rodilla + plastia LCA": 2
    }
   },
   {
@@ -71,7 +71,6 @@
    "no_realizados": 2,
    "turnos": {
     "Matutino": 44,
-    "Matutuno": 1,
     "Vespertino": 3,
     "Nocturno": 1
    },
@@ -103,8 +102,8 @@
    "no_realizados": 0,
    "turnos": {},
    "cirugias": {
-    "Colecistectomía": 4,
-    "Hernioplastía": 6
+    "Colecistectomia": 4,
+    "Hernioplastia": 6
    }
   }
  ]
