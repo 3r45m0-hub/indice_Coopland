@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-12T14:25:08Z",
+ "generado": "2026-11-12T15:25:34Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -16,7 +16,7 @@
    },
    "cirugias": {
     "Hernioplastía": 13,
-    "Histerectomia": 12
+    "Histerectomía": 12
    }
   },
   {
@@ -66,17 +66,18 @@
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 58,
-   "realizados": 26,
+   "pacientes": 69,
+   "realizados": 32,
    "no_realizados": 2,
    "turnos": {
-    "Matutino": 44,
-    "Vespertino": 3,
-    "Nocturno": 1
+    "Matutino": 51,
+    "Nocturno": 1,
+    "Vespertino": 14
    },
    "cirugias": {
     "Faco": 44,
     "Hernia inguinal": 4,
+    "Colecistectomía lap": 11,
     "Hernia": 3,
     "Hernia umbilical": 7
    }
@@ -102,8 +103,8 @@
    "no_realizados": 0,
    "turnos": {},
    "cirugias": {
-    "Colecistectomia": 4,
-    "Hernioplastia": 6
+    "Colecistectomía": 4,
+    "Hernioplastía": 6
    }
   }
  ]
