@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-14T16:25:42Z",
+ "generado": "2026-11-14T17:25:42Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -7,11 +7,11 @@
    "intervenidos": 2,
    "jornadas": 1,
    "pacientes": 42,
-   "realizados": 21,
+   "realizados": 23,
    "no_realizados": 6,
    "turnos": {
     "Nocturno": 22,
-    "Matutino": 11,
+    "Matutino": 13,
     "Vespertino": 7
    },
    "cirugias": {
@@ -28,7 +28,7 @@
    "intervenidos": 14,
    "jornadas": 2,
    "pacientes": 22,
-   "realizados": 4,
+   "realizados": 13,
    "no_realizados": 0,
    "turnos": {
     "Matutino": 6,
@@ -39,8 +39,8 @@
     "Reemplazo articular de rodilla": 9,
     "Reemplazo articular de cadera": 2,
     "Artroscopia de rodilla (implante por confirmar)": 6,
-    "Artroscopia de rodilla + remodelación meniscal": 1,
-    "Artroscopia rodilla + remodelación meniscal": 1,
+    "Artroscopia de rodilla + remodelacion meniscal": 1,
+    "Artroscopia rodilla + remodelacion meniscal": 1,
     "Artroscopia de rodilla": 1,
     "Artroscopia de rodilla + plastia lca": 2
    }
