@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-14T18:25:14Z",
+ "generado": "2026-11-14T19:25:22Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -7,11 +7,11 @@
    "intervenidos": 2,
    "jornadas": 1,
    "pacientes": 43,
-   "realizados": 23,
+   "realizados": 24,
    "no_realizados": 6,
    "turnos": {
     "Nocturno": 22,
-    "Matutino": 13,
+    "Matutino": 14,
     "Vespertino": 7
    },
    "cirugias": {
@@ -19,7 +19,8 @@
     "Histerectomía": 22,
     "Colecistectomía": 2,
     "Hernia inguinal": 3,
-    "Hernia umbilical": 1
+    "Hernia umbilical": 1,
+    "Rafi": 1
    }
   },
   {
