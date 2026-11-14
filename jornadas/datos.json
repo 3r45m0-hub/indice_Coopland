@@ -1,12 +1,12 @@
 {
- "generado": "2026-11-14T17:25:42Z",
+ "generado": "2026-11-14T18:25:14Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
    "jornadas": 1,
-   "pacientes": 42,
+   "pacientes": 43,
    "realizados": 23,
    "no_realizados": 6,
    "turnos": {
