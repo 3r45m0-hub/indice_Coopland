@@ -1,120 +1,118 @@
 {
-  "generado": "2026-11-15T21:25:52Z",
-  "unidades": [
-    {
-      "unidad": "HGZ 1",
-      "planeados": 2,
-      "intervenidos": 2,
-      "jornadas": 1,
-      "pacientes": 52,
-      "realizados": 28,
-      "no_realizados": 9,
-      "turnos": {
-        "Nocturno": 24,
-        "Matutino": 16,
-        "Vespertino": 12
-      },
-      "cirugias": {
-        "Hernioplastía": 14,
-        "Histerectomía": 22,
-        "Colecistectomía": 2,
-        "Hernia inguinal": 3,
-        "Hernia umbilical": 1,
-        "Rafi": 1,
-        "Plastia umbilical": 2,
-        "Plastia inguinal": 2
-      }
-    },
-    {
-      "unidad": "HGZ 2",
-      "planeados": 32,
-      "intervenidos": 26,
-      "jornadas": 3,
-      "pacientes": 31,
-      "realizados": 22,
-      "no_realizados": 0,
-      "turnos": {
-        "Matutino": 6,
-        "Vespertino": 6,
-        "Jornada acumulada": 19
-      },
-      "cirugias": {
-        "Reemplazo articular de rodilla": 11,
-        "Reemplazo articular de cadera": 2,
-        "Artroscopia de rodilla (implante por confirmar)": 6,
-        "Artroscopia de rodilla + remodelación meniscal": 1,
-        "Artroscopia rodilla + remodelación meniscal": 1,
-        "Artroscopia de rodilla": 2,
-        "Artroscopia de rodilla + plastia LCA": 3,
-        "Colecistectomía": 3,
-        "Artroscopia": 1,
-        "Colecistitis crónica": 1
-      }
-    },
-    {
-      "unidad": "HGZ 6",
-      "planeados": 10,
-      "intervenidos": null,
-      "jornadas": 1,
-      "pacientes": 10,
-      "realizados": 8,
-      "no_realizados": 2,
-      "turnos": {
-        "Nocturno": 6,
-        "Vespertino": 1,
-        "Matutino": 2,
-        "Jornada acumulada": 1
-      },
-      "cirugias": {
-        "Plastia inguinal": 5,
-        "Plastia umbilical": 5
-      }
-    },
-    {
-      "unidad": "HGZ 50",
-      "planeados": null,
-      "intervenidos": null,
-      "jornadas": 0,
-      "pacientes": 69,
-      "realizados": 39,
-      "no_realizados": 4,
-      "turnos": {
-        "Matutino": 51,
-        "Nocturno": 1,
-        "Vespertino": 13
-      },
-      "cirugias": {
-        "Faco": 44,
-        "Hernia inguinal": 4,
-        "Colecistectomía lap": 11,
-        "Hernia": 3,
-        "Hernia umbilical": 7
-      }
-    },
-    {
-      "unidad": "HGSZ 4",
-      "planeados": null,
-      "intervenidos": null,
-      "jornadas": 0,
-      "pacientes": 1,
-      "realizados": 0,
-      "no_realizados": 0,
-      "turnos": {},
-      "cirugias": {}
-    },
-    {
-      "unidad": "HGSZ 9",
-      "planeados": 10,
-      "intervenidos": null,
-      "jornadas": 1,
-      "pacientes": 10,
-      "realizados": 0,
-      "no_realizados": 0,
-      "turnos": {},
-      "cirugias": {
-        "Colecistectomía": 4,
-        "Hernioplastía": 6
-      }
-    }
-  ]
+ "generado": "2026-11-15T22:25:01Z",
+ "unidades": [
+  {
+   "unidad": "HGZ 1",
+   "planeados": 2,
+   "intervenidos": 2,
+   "jornadas": 1,
+   "pacientes": 55,
+   "realizados": 29,
+   "no_realizados": 11,
+   "turnos": {
+    "Matutino": 16,
+    "Nocturno": 24,
+    "Vespertino": 15
+   },
+   "cirugias": {
+    "Amputación": 1,
+    "Colecistectomía": 4,
+    "Hemorroidectomía": 1,
+    "Hernioplastía": 24,
+    "Histerectomía": 24,
+    "Rafi": 1
+   }
+  },
+  {
+   "unidad": "HGZ 2",
+   "planeados": 32,
+   "intervenidos": 26,
+   "jornadas": 3,
+   "pacientes": 31,
+   "realizados": 22,
+   "no_realizados": 0,
+   "turnos": {
+    "Jornada acumulada": 19,
+    "Matutino": 6,
+    "Vespertino": 6
+   },
+   "cirugias": {
+    "Artroscopia": 1,
+    "Artroscopia de rodilla": 2,
+    "Artroscopia de rodilla (implante por confirmar)": 6,
+    "Artroscopia de rodilla + plastia LCA": 3,
+    "Artroscopia de rodilla + remodelación meniscal": 1,
+    "Artroscopia rodilla + remodelación meniscal": 1,
+    "Colecistectomía": 3,
+    "Colecistitis crónica": 1,
+    "Reemplazo articular de cadera": 2,
+    "Reemplazo articular de rodilla": 11
+   }
+  },
+  {
+   "unidad": "HGZ 6",
+   "planeados": 10,
+   "intervenidos": null,
+   "jornadas": 1,
+   "pacientes": 10,
+   "realizados": 8,
+   "no_realizados": 2,
+   "turnos": {
+    "Jornada acumulada": 1,
+    "Matutino": 2,
+    "Nocturno": 6,
+    "Vespertino": 1
+   },
+   "cirugias": {
+    "Plastia inguinal": 5,
+    "Plastia umbilical": 5
+   }
+  },
+  {
+   "unidad": "HGZ 50",
+   "planeados": null,
+   "intervenidos": null,
+   "jornadas": 0,
+   "pacientes": 69,
+   "realizados": 39,
+   "no_realizados": 4,
+   "turnos": {
+    "Matutino": 51,
+    "Nocturno": 1,
+    "Vespertino": 13
+   },
+   "cirugias": {
+    "Colecistectomía lap": 11,
+    "Faco": 44,
+    "Hernia": 3,
+    "Hernia inguinal": 4,
+    "Hernia umbilical": 7
+   }
+  },
+  {
+   "unidad": "HGSZ 4",
+   "planeados": null,
+   "intervenidos": null,
+   "jornadas": 0,
+   "pacientes": 1,
+   "realizados": 0,
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {}
+  },
+  {
+   "unidad": "HGSZ 9",
+   "planeados": 10,
+   "intervenidos": null,
+   "jornadas": 1,
+   "pacientes": 10,
+   "realizados": 0,
+   "no_realizados": 0,
+   "turnos": {},
+   "cirugias": {
+    "Colecistectomía": 4,
+    "Hernioplastía": 6
+   }
+  }
+ ]
 }
