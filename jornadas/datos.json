@@ -1,18 +1,18 @@
 {
- "generado": "2026-11-15T13:25:39Z",
+ "generado": "2026-11-15T16:25:11Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
    "jornadas": 1,
-   "pacientes": 43,
+   "pacientes": 44,
    "realizados": 24,
-   "no_realizados": 6,
+   "no_realizados": 7,
    "turnos": {
     "Nocturno": 22,
     "Matutino": 14,
-    "Vespertino": 7
+    "Vespertino": 8
    },
    "cirugias": {
     "Hernioplastía": 14,
@@ -20,7 +20,8 @@
     "Colecistectomía": 2,
     "Hernia inguinal": 3,
     "Hernia umbilical": 1,
-    "Rafi": 1
+    "Rafi": 1,
+    "Cálculo biliar": 1
    }
   },
   {
@@ -39,13 +40,12 @@
    "cirugias": {
     "Reemplazo articular de rodilla": 11,
     "Reemplazo articular de cadera": 2,
-    "Artroscopía de rodilla (implante por confirmar)": 6,
-    "Artroscopía de rodilla + remodelación meniscal": 1,
-    "Artroscopía rodilla + remodelación meniscal": 1,
-    "Artroscopía de rodilla": 2,
-    "Artroscopía de rodilla + plastia lca": 3,
+    "Artroscopia de rodilla (implante por confirmar)": 6,
+    "Artroscopia de rodilla + remodelación meniscal": 2,
+    "Artroscopia de rodilla": 2,
+    "Artroscopia de rodilla + plastia LCA": 3,
     "Colecistectomía": 3,
-    "Artroscopía": 1,
+    "Artroscopia": 1,
     "Colecistitis crónica": 1
    }
   },
