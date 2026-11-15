@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-15T20:26:00Z",
+  "generado": "2026-11-15T21:25:52Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -18,10 +18,11 @@
         "Hernioplastía": 14,
         "Histerectomía": 22,
         "Colecistectomía": 2,
-        "Hernia inguinal": 6,
-        "Hernia umbilical": 3,
+        "Hernia inguinal": 3,
+        "Hernia umbilical": 1,
         "Rafi": 1,
-        "Cálculo biliar": 1
+        "Plastia umbilical": 2,
+        "Plastia inguinal": 2
       }
     },
     {
