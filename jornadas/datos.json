@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-15T02:25:55Z",
+ "generado": "2026-11-15T13:25:39Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -25,25 +25,28 @@
   },
   {
    "unidad": "HGZ 2",
-   "planeados": 18,
-   "intervenidos": 14,
-   "jornadas": 2,
-   "pacientes": 22,
-   "realizados": 13,
+   "planeados": 32,
+   "intervenidos": 26,
+   "jornadas": 3,
+   "pacientes": 31,
+   "realizados": 22,
    "no_realizados": 0,
    "turnos": {
     "Matutino": 6,
     "Vespertino": 6,
-    "Jornada acumulada": 10
+    "Jornada acumulada": 19
    },
    "cirugias": {
-    "Reemplazo articular de rodilla": 9,
+    "Reemplazo articular de rodilla": 11,
     "Reemplazo articular de cadera": 2,
     "Artroscopía de rodilla (implante por confirmar)": 6,
     "Artroscopía de rodilla + remodelación meniscal": 1,
     "Artroscopía rodilla + remodelación meniscal": 1,
-    "Artroscopía de rodilla": 1,
-    "Artroscopía de rodilla + plastia lca": 2
+    "Artroscopía de rodilla": 2,
+    "Artroscopía de rodilla + plastia lca": 3,
+    "Colecistectomía": 3,
+    "Artroscopía": 1,
+    "Colecistitis crónica": 1
    }
   },
   {
