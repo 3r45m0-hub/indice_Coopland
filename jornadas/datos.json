@@ -1,17 +1,17 @@
 {
- "generado": "2026-11-16T01:25:39Z",
+ "generado": "2026-11-16T13:30:02Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
    "jornadas": 1,
-   "pacientes": 56,
-   "realizados": 31,
+   "pacientes": 58,
+   "realizados": 33,
    "no_realizados": 12,
    "turnos": {
     "Matutino": 16,
-    "Nocturno": 24,
+    "Nocturno": 26,
     "Vespertino": 16
    },
    "cirugias": {
@@ -19,7 +19,7 @@
     "Colecistectomía": 4,
     "Hemorroidectomía": 1,
     "Hernioplastía": 24,
-    "Histerectomía": 24,
+    "Histerectomía": 26,
     "Rafi": 2
    }
   },
