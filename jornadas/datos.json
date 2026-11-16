@@ -1,21 +1,22 @@
 {
- "generado": "2026-11-16T13:30:02Z",
+ "generado": "2026-11-16T14:27:49Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 2,
    "intervenidos": 2,
    "jornadas": 1,
-   "pacientes": 58,
-   "realizados": 33,
+   "pacientes": 59,
+   "realizados": 34,
    "no_realizados": 12,
    "turnos": {
     "Matutino": 16,
-    "Nocturno": 26,
+    "Nocturno": 27,
     "Vespertino": 16
    },
    "cirugias": {
     "Amputación": 1,
+    "Catéter TKF": 1,
     "Colecistectomía": 4,
     "Hemorroidectomía": 1,
     "Hernioplastía": 24,
