@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-17T16:25:15Z",
+ "generado": "2026-11-17T17:25:20Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -26,7 +26,7 @@
    "intervenidos": 26,
    "jornadas": 3,
    "pacientes": 31,
-   "realizados": 22,
+   "realizados": 29,
    "no_realizados": 0,
    "turnos": {
     "Jornada acumulada": 19,
@@ -37,7 +37,7 @@
     "Artroscopía": 1,
     "Artroscopía de rodilla": 2,
     "Artroscopía de rodilla (implante por confirmar)": 6,
-    "Artroscopía de rodilla + plastia LCA": 3,
+    "Artroscopía de rodilla + plastia lca": 3,
     "Artroscopía de rodilla + remodelación meniscal": 1,
     "Artroscopía rodilla + remodelación meniscal": 1,
     "Colecistectomía": 3,
@@ -70,19 +70,22 @@
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 67,
-   "realizados": 48,
-   "no_realizados": 5,
+   "pacientes": 75,
+   "realizados": 58,
+   "no_realizados": 8,
    "turnos": {
-    "Matutino": 50,
+    "Matutino": 52,
+    "Matutuno": 1,
     "Nocturno": 1,
-    "Vespertino": 14
+    "Vespertino": 18
    },
    "cirugias": {
-    "Colecistectomía lap": 10,
+    "Colecistectomía lap": 15,
     "Faco": 43,
     "Hernia": 3,
-    "Hernia inguinal": 4,
+    "Hernia inguinal": 5,
+    "Hernia inguinal,": 1,
+    "Hernia inguinial": 1,
     "Hernia umbilical": 7
    }
   },
