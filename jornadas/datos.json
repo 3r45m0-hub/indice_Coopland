@@ -1,27 +1,23 @@
 {
- "generado": "2026-11-17T15:25:29Z",
+ "generado": "2026-11-17T16:25:15Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
-   "planeados": 2,
-   "intervenidos": 2,
+   "planeados": 25,
+   "intervenidos": 31,
    "jornadas": 1,
-   "pacientes": 59,
-   "realizados": 37,
-   "no_realizados": 18,
+   "pacientes": 41,
+   "realizados": 32,
+   "no_realizados": 9,
    "turnos": {
-    "Matutino": 16,
-    "Nocturno": 27,
-    "Vespertino": 16
+    "Matutino": 13,
+    "Nocturno": 20,
+    "Vespertino": 8
    },
    "cirugias": {
-    "Amputación": 1,
-    "Catéter TKF": 1,
-    "Colecistectomía": 4,
-    "Hemorroidectomía": 1,
-    "Hernioplastía": 24,
-    "Histerectomía": 26,
-    "Rafi": 2
+    "Colecistectomía": 2,
+    "Hernioplastía": 17,
+    "Histerectomía": 22
    }
   },
   {
@@ -38,12 +34,12 @@
     "Vespertino": 6
    },
    "cirugias": {
-    "Artroscopia": 1,
-    "Artroscopia de rodilla": 2,
-    "Artroscopia de rodilla (implante por confirmar)": 6,
-    "Artroscopia de rodilla + plastia LCA": 3,
-    "Artroscopia de rodilla + remodelación meniscal": 1,
-    "Artroscopia rodilla + remodelación meniscal": 1,
+    "Artroscopía": 1,
+    "Artroscopía de rodilla": 2,
+    "Artroscopía de rodilla (implante por confirmar)": 6,
+    "Artroscopía de rodilla + plastia LCA": 3,
+    "Artroscopía de rodilla + remodelación meniscal": 1,
+    "Artroscopía rodilla + remodelación meniscal": 1,
     "Colecistectomía": 3,
     "Colecistitis crónica": 1,
     "Reemplazo articular de cadera": 2,
@@ -74,17 +70,17 @@
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 69,
-   "realizados": 39,
-   "no_realizados": 4,
+   "pacientes": 67,
+   "realizados": 48,
+   "no_realizados": 5,
    "turnos": {
-    "Matutino": 51,
+    "Matutino": 50,
     "Nocturno": 1,
-    "Vespertino": 13
+    "Vespertino": 14
    },
    "cirugias": {
-    "Colecistectomía lap": 11,
-    "Faco": 44,
+    "Colecistectomía lap": 10,
+    "Faco": 43,
     "Hernia": 3,
     "Hernia inguinal": 4,
     "Hernia umbilical": 7
