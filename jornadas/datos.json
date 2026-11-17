@@ -1,22 +1,23 @@
 {
-  "generado": "2026-11-17T22:24:19Z",
+  "generado": "2026-11-17T23:25:26Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
-      "planeados": 20,
+      "planeados": 30,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 20,
+      "pacientes": 29,
       "realizados": 0,
       "no_realizados": 0,
       "turnos": {
-        "Matutino": 9,
-        "Nocturno": 6,
-        "Vespertino": 5
+        "Matutino": 12,
+        "Nocturno": 9,
+        "Vespertino": 8
       },
       "cirugias": {
         "Colecistectomía": 5,
         "Hernioplastía": 14,
+        "Histerectomía": 9,
         "Histerectomía / plastia": 1
       }
     },
