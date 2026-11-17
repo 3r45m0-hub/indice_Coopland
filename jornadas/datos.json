@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-17T18:25:33Z",
+ "generado": "2026-11-17T19:25:00Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -34,12 +34,12 @@
     "Vespertino": 6
    },
    "cirugias": {
-    "Artroscopía": 1,
-    "Artroscopía de rodilla": 2,
-    "Artroscopía de rodilla (implante por confirmar)": 6,
-    "Artroscopía de rodilla + plastia lca": 3,
-    "Artroscopía de rodilla + remodelación meniscal": 1,
-    "Artroscopía rodilla + remodelación meniscal": 1,
+    "Artroscopia": 1,
+    "Artroscopia de rodilla": 2,
+    "Artroscopia de rodilla (implante por confirmar)": 6,
+    "Artroscopia de rodilla + plastia lca": 3,
+    "Artroscopia de rodilla + remodelación meniscal": 1,
+    "Artroscopia rodilla + remodelación meniscal": 1,
     "Colecistectomía": 3,
     "Colecistitis crónica": 1,
     "Reemplazo articular de cadera": 2,
@@ -70,17 +70,18 @@
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 24,
+   "pacientes": 31,
    "realizados": 0,
-   "no_realizados": 2,
+   "no_realizados": 4,
    "turnos": {
-    "Matutino": 4,
-    "Vespertino": 16
+    "Matutino": 8,
+    "Vespertino": 17
    },
    "cirugias": {
+    "Colecistectomía": 6,
     "Colecistectomía lap": 7,
     "Hernia inguinal": 5,
-    "Sustitución de rodilla": 10
+    "Sustitución de rodilla": 12
    }
   },
   {
