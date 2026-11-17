@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-17T19:25:00Z",
+ "generado": "2026-11-17T20:25:26Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -49,7 +49,7 @@
   {
    "unidad": "HGZ 6",
    "planeados": 10,
-   "intervenidos": null,
+   "intervenidos": 8,
    "jornadas": 1,
    "pacientes": 10,
    "realizados": 8,
