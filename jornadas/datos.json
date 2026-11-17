@@ -1,10 +1,10 @@
 {
- "generado": "2026-11-17T17:25:20Z",
+ "generado": "2026-11-17T18:25:33Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
    "planeados": 25,
-   "intervenidos": 31,
+   "intervenidos": 32,
    "jornadas": 1,
    "pacientes": 41,
    "realizados": 32,
@@ -70,23 +70,17 @@
    "planeados": null,
    "intervenidos": null,
    "jornadas": 0,
-   "pacientes": 75,
-   "realizados": 58,
-   "no_realizados": 8,
+   "pacientes": 24,
+   "realizados": 0,
+   "no_realizados": 2,
    "turnos": {
-    "Matutino": 52,
-    "Matutuno": 1,
-    "Nocturno": 1,
-    "Vespertino": 18
+    "Matutino": 4,
+    "Vespertino": 16
    },
    "cirugias": {
-    "Colecistectomía lap": 15,
-    "Faco": 43,
-    "Hernia": 3,
+    "Colecistectomía lap": 7,
     "Hernia inguinal": 5,
-    "Hernia inguinal,": 1,
-    "Hernia inguinial": 1,
-    "Hernia umbilical": 7
+    "Sustitución de rodilla": 10
    }
   },
   {
