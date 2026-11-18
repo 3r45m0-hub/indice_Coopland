@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-18T18:24:47Z",
+  "generado": "2026-11-18T19:25:16Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -27,7 +27,7 @@
       "intervenidos": null,
       "jornadas": 1,
       "pacientes": 20,
-      "realizados": 0,
+      "realizados": 2,
       "no_realizados": 0,
       "turnos": {
         "Jornada acumulada": 11,
@@ -55,8 +55,8 @@
       "cirugias": {
         "Hernia inguinal": 4,
         "Hernia insicional": 1,
-        "Hernian inguinal": 1,
-        "Hernia umbilical": 4
+        "Hernia umbilical": 4,
+        "Hernian inguinal": 1
       }
     },
     {
@@ -72,11 +72,10 @@
         "Vespertino": 19
       },
       "cirugias": {
-        "Colecistectomía": 6,
         "Colecistectomia lap": 7,
+        "Colecistectomía": 6,
         "Hernia": 5,
-        "Hernia inguinal": 3,
-        "Hernia inguinal,": 1,
+        "Hernia inguinal": 4,
         "Hernia inguinial": 1,
         "Sustitucion de rodilla": 12
       }
