@@ -1,22 +1,22 @@
 {
-  "generado": "2026-11-18T17:25:23Z",
+  "generado": "2026-11-18T18:24:47Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
       "planeados": 30,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 29,
-      "realizados": 0,
-      "no_realizados": 0,
+      "pacientes": 30,
+      "realizados": 3,
+      "no_realizados": 4,
       "turnos": {
         "Matutino": 12,
-        "Nocturno": 9,
+        "Nocturno": 10,
         "Vespertino": 8
       },
       "cirugias": {
         "Colecistectomía": 5,
-        "Hernioplastía": 14,
+        "Hernioplastía": 15,
         "Histerectomía": 9,
         "Histerectomía / plastia": 1
       }
@@ -49,14 +49,14 @@
       "no_realizados": 0,
       "turnos": {
         "Jornada acumulada": 1,
-        "Nocturno": 8,
-        "Vespertino": 1
+        "T. nocturno": 8,
+        "T. vespertino": 1
       },
       "cirugias": {
         "Hernia inguinal": 4,
         "Hernia insicional": 1,
-        "Hernia umbilical": 4,
-        "Hernian inguinal": 1
+        "Hernian inguinal": 1,
+        "Hernia umbilical": 4
       }
     },
     {
@@ -73,11 +73,12 @@
       },
       "cirugias": {
         "Colecistectomía": 6,
-        "Colecistectomía lap": 7,
+        "Colecistectomia lap": 7,
         "Hernia": 5,
-        "Hernia inguinal": 4,
+        "Hernia inguinal": 3,
+        "Hernia inguinal,": 1,
         "Hernia inguinial": 1,
-        "Sustitución de rodilla": 12
+        "Sustitucion de rodilla": 12
       }
     },
     {
