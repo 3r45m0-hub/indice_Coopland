@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-19T21:25:17Z",
+  "generado": "2026-11-21T17:24:25Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -26,16 +26,17 @@
       "planeados": 20,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 24,
-      "realizados": 8,
+      "pacientes": 25,
+      "realizados": 9,
       "no_realizados": 1,
       "turnos": {
-        "Jornada acumulada": 11,
+        "Jornada acumulada": 12,
         "Matutino": 2,
         "Nocturno": 9,
         "Vespertino": 2
       },
       "cirugias": {
+        "Colecistectomía": 1,
         "Plastia abdominal": 5,
         "Plastia inguinal": 10,
         "Plastia umbilical": 5,
