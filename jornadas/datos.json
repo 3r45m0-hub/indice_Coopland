@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-21T20:25:14Z",
+ "generado": "2026-11-22T02:24:33Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -26,12 +26,12 @@
    "planeados": 20,
    "intervenidos": null,
    "jornadas": 1,
-   "pacientes": 30,
-   "realizados": 14,
+   "pacientes": 33,
+   "realizados": 17,
    "no_realizados": 1,
    "turnos": {
     "Nocturno": 9,
-    "Jornada acumulada": 17,
+    "Jornada acumulada": 20,
     "Matutino": 2,
     "Vespertino": 2
    },
@@ -40,8 +40,8 @@
     "Plastia inguinal": 10,
     "Plastia abdominal": 5,
     "Prótesis de rodilla": 5,
-    "Colecistectomía": 3,
-    "Artroscopía": 2
+    "Colecistectomía": 5,
+    "Artroscopía": 3
    }
   },
   {
