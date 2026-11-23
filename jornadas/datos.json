@@ -1,47 +1,33 @@
 {
-  "generado": "2026-11-23T17:24:52Z",
+  "generado": "2026-11-23T18:24:40Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
       "planeados": 30,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 30,
-      "realizados": 3,
-      "no_realizados": 4,
-      "turnos": {
-        "Matutino": 12,
-        "Vespertino": 8,
-        "Nocturno": 10
-      },
-      "cirugias": {
-        "Hernioplastía": 15,
-        "Colecistectomía": 5,
-        "Histerectomía / plastia": 1,
-        "Histerectomía": 9
-      }
+      "pacientes": 0,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {}
     },
     {
       "unidad": "HGZ 2",
       "planeados": 20,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 41,
-      "realizados": 37,
-      "no_realizados": 3,
+      "pacientes": 10,
+      "realizados": 0,
+      "no_realizados": 0,
       "turnos": {
-        "Nocturno": 9,
-        "Jornada acumulada": 28,
-        "Matutino": 2,
-        "Vespertino": 2
+        "Nocturno": 10
       },
       "cirugias": {
-        "Plastia umbilical": 5,
-        "Plastia inguinal": 10,
-        "Plastia abdominal": 5,
-        "Prótesis de rodilla": 6,
-        "Colecistectomía": 8,
-        "Artroscopía": 7
+        "Plastia inguinal bilateral": 1,
+        "Plastia umbilical": 6,
+        "Plastia inguinal": 2,
+        "Plastia abdominal": 1
       }
     },
     {
@@ -49,19 +35,11 @@
       "planeados": 10,
       "intervenidos": 7,
       "jornadas": 1,
-      "pacientes": 10,
-      "realizados": 6,
-      "no_realizados": 3,
-      "turnos": {
-        "T. nocturno": 8,
-        "T. vespertino": 1,
-        "Jornada acumulada": 1
-      },
-      "cirugias": {
-        "Hernia inguinal": 5,
-        "Hernia umbilical": 4,
-        "Hernia incisional": 1
-      }
+      "pacientes": 0,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {}
     },
     {
       "unidad": "HGZ 50",
@@ -69,8 +47,8 @@
       "intervenidos": null,
       "jornadas": 1,
       "pacientes": 36,
-      "realizados": 0,
-      "no_realizados": 2,
+      "realizados": 1,
+      "no_realizados": 3,
       "turnos": {
         "Matutino": 10,
         "Vespertino": 11
