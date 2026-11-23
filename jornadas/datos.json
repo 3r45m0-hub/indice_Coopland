@@ -1,113 +1,111 @@
 {
- "generado": "2026-11-23T14:26:20Z",
- "unidades": [
-  {
-   "unidad": "HGZ 1",
-   "planeados": 30,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 30,
-   "realizados": 3,
-   "no_realizados": 4,
-   "turnos": {
-    "Matutino": 12,
-    "Vespertino": 8,
-    "Nocturno": 10
-   },
-   "cirugias": {
-    "Hernioplastía": 15,
-    "Colecistectomía": 5,
-    "Histerectomía / plastia": 1,
-    "Histerectomía": 9
-   }
-  },
-  {
-   "unidad": "HGZ 2",
-   "planeados": 20,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 41,
-   "realizados": 37,
-   "no_realizados": 3,
-   "turnos": {
-    "Nocturno": 9,
-    "Jornada acumulada": 28,
-    "Matutino": 2,
-    "Vespertino": 2
-   },
-   "cirugias": {
-    "Plastia umbilical": 5,
-    "Plastia inguinal": 10,
-    "Plastia abdominal": 5,
-    "Prótesis de rodilla": 6,
-    "Colecistectomía": 8,
-    "Artroscopía": 7
-   }
-  },
-  {
-   "unidad": "HGZ 6",
-   "planeados": 10,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 10,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {
-    "T. nocturno": 8,
-    "T. vespertino": 1,
-    "Jornada acumulada": 1
-   },
-   "cirugias": {
-    "Hernia inguinal": 5,
-    "Hernia umbilical": 4,
-    "Hernia incisional": 1
-   }
-  },
-  {
-   "unidad": "HGZ 50",
-   "planeados": 18,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 36,
-   "realizados": 2,
-   "no_realizados": 4,
-   "turnos": {
-    "Vespertino": 19,
-    "Matutino": 11
-   },
-   "cirugias": {
-    "Sustitución de rodilla": 12,
-    "Colecistectomía": 6,
-    "Hernia": 5,
-    "Colecistectomía laparoscópica": 7,
-    "Hernia inguinial": 1,
-    "Hernia inguinal": 4
-   }
-  },
-  {
-   "unidad": "HGSZ 4",
-   "planeados": null,
-   "intervenidos": null,
-   "jornadas": 0,
-   "pacientes": 1,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
-  },
-  {
-   "unidad": "HGSZ 9",
-   "planeados": 10,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 10,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {
-    "Colecistectomía": 4,
-    "Hernioplastía": 6
-   }
-  }
- ]
+  "generado": "2026-11-23T17:24:52Z",
+  "unidades": [
+    {
+      "unidad": "HGZ 1",
+      "planeados": 30,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 30,
+      "realizados": 3,
+      "no_realizados": 4,
+      "turnos": {
+        "Matutino": 12,
+        "Vespertino": 8,
+        "Nocturno": 10
+      },
+      "cirugias": {
+        "Hernioplastía": 15,
+        "Colecistectomía": 5,
+        "Histerectomía / plastia": 1,
+        "Histerectomía": 9
+      }
+    },
+    {
+      "unidad": "HGZ 2",
+      "planeados": 20,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 41,
+      "realizados": 37,
+      "no_realizados": 3,
+      "turnos": {
+        "Nocturno": 9,
+        "Jornada acumulada": 28,
+        "Matutino": 2,
+        "Vespertino": 2
+      },
+      "cirugias": {
+        "Plastia umbilical": 5,
+        "Plastia inguinal": 10,
+        "Plastia abdominal": 5,
+        "Prótesis de rodilla": 6,
+        "Colecistectomía": 8,
+        "Artroscopía": 7
+      }
+    },
+    {
+      "unidad": "HGZ 6",
+      "planeados": 10,
+      "intervenidos": 7,
+      "jornadas": 1,
+      "pacientes": 10,
+      "realizados": 6,
+      "no_realizados": 3,
+      "turnos": {
+        "T. nocturno": 8,
+        "T. vespertino": 1,
+        "Jornada acumulada": 1
+      },
+      "cirugias": {
+        "Hernia inguinal": 5,
+        "Hernia umbilical": 4,
+        "Hernia incisional": 1
+      }
+    },
+    {
+      "unidad": "HGZ 50",
+      "planeados": 18,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 36,
+      "realizados": 0,
+      "no_realizados": 2,
+      "turnos": {
+        "Matutino": 10,
+        "Vespertino": 11
+      },
+      "cirugias": {
+        "Colecistectomía": 8,
+        "Hernia": 3,
+        "Colecistectomía laparoscópica": 7,
+        "Hernia inguinal": 5
+      }
+    },
+    {
+      "unidad": "HGSZ 4",
+      "planeados": null,
+      "intervenidos": null,
+      "jornadas": 0,
+      "pacientes": 1,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {}
+    },
+    {
+      "unidad": "HGSZ 9",
+      "planeados": 10,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 10,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {
+        "Colecistectomía": 4,
+        "Hernioplastía": 6
+      }
+    }
+  ]
 }
