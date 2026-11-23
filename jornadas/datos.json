@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T19:25:26Z",
+  "generado": "2026-11-23T20:25:15Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -54,11 +54,12 @@
       "no_realizados": 3,
       "turnos": {
         "Matutino": 10,
-        "Vespertino": 11
+        "Vespertino": 13,
+        "Nocturno": 1
       },
       "cirugias": {
-        "Colecistectomía": 8,
-        "Hernia": 3,
+        "Colecistectomía": 10,
+        "Hernia": 4,
         "Colecistectomía lap": 7,
         "Hernia inguinial": 1,
         "Hernia inguinal": 4
