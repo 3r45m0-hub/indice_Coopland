@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T18:24:40Z",
+  "generado": "2026-11-23T19:25:26Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -17,17 +17,20 @@
       "planeados": 20,
       "intervenidos": null,
       "jornadas": 1,
-      "pacientes": 10,
+      "pacientes": 20,
       "realizados": 0,
       "no_realizados": 0,
       "turnos": {
-        "Nocturno": 10
+        "Nocturno": 10,
+        "Vespertino": 4,
+        "Matutino": 6
       },
       "cirugias": {
         "Plastia inguinal bilateral": 1,
         "Plastia umbilical": 6,
         "Plastia inguinal": 2,
-        "Plastia abdominal": 1
+        "Plastia abdominal": 1,
+        "Artroplastia total de rodilla": 10
       }
     },
     {
@@ -56,8 +59,9 @@
       "cirugias": {
         "Colecistectomía": 8,
         "Hernia": 3,
-        "Colecistectomía laparoscópica": 7,
-        "Hernia inguinal": 5
+        "Colecistectomía lap": 7,
+        "Hernia inguinial": 1,
+        "Hernia inguinal": 4
       }
     },
     {
@@ -82,7 +86,7 @@
       "turnos": {},
       "cirugias": {
         "Colecistectomía": 4,
-        "Hernioplastía": 6
+        "Hernioplastia": 6
       }
     }
   ]
