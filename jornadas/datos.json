@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T23:24:53Z",
+  "generado": "2026-11-24T14:24:42Z",
   "unidades": [
     {
       "unidad": "HGZ 1",
@@ -39,7 +39,7 @@
         "Plastia umbilical": 6,
         "Plastia inguinal": 2,
         "Plastia abdominal": 1,
-        "Artroplastia total de rodilla": 10
+        "Artroplastía total de rodilla": 10
       }
     },
     {
@@ -70,8 +70,8 @@
         "Colecistectomía": 10,
         "Hernia": 4,
         "Colecistectomía lap": 7,
-        "Hernia inguinial": 1,
-        "Hernia inguinal": 4
+        "Hernia inguinal": 4,
+        "Hernia inguinial": 1
       }
     },
     {
