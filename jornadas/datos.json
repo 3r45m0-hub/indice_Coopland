@@ -1,102 +1,102 @@
 {
- "generado": "2026-11-24T17:25:16Z",
- "unidades": [
-  {
-   "unidad": "HGZ 1",
-   "planeados": null,
-   "intervenidos": null,
-   "jornadas": 0,
-   "pacientes": 18,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {
-    "Vespertino": 2,
-    "Nocturno": 9,
-    "Matutino": 3,
-    "Jornada": 4
-   },
-   "cirugias": {
-    "Histerectomía": 10,
-    "Hernioplastía": 4,
-    "Colecistectomía": 4
-   }
-  },
-  {
-   "unidad": "HGZ 2",
-   "planeados": 20,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 20,
-   "realizados": 3,
-   "no_realizados": 0,
-   "turnos": {
-    "Nocturno": 10,
-    "Vespertino": 4,
-    "Matutino": 6
-   },
-   "cirugias": {
-    "Plastia inguinal bilateral": 1,
-    "Plastia umbilical": 6,
-    "Plastia inguinal": 2,
-    "Plastia abdominal": 1,
-    "Artroplastía total de rodilla": 10
-   }
-  },
-  {
-   "unidad": "HGZ 6",
-   "planeados": 10,
-   "intervenidos": 7,
-   "jornadas": 1,
-   "pacientes": 0,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
-  },
-  {
-   "unidad": "HGZ 50",
-   "planeados": 18,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 27,
-   "realizados": 1,
-   "no_realizados": 3,
-   "turnos": {
-    "Matutino": 10,
-    "Vespertino": 13,
-    "Nocturno": 1
-   },
-   "cirugias": {
-    "Colecistectomía": 10,
-    "Hernia": 4,
-    "Colecistectomía lap": 7,
-    "Hernia inguinal": 5
-   }
-  },
-  {
-   "unidad": "HGSZ 4",
-   "planeados": null,
-   "intervenidos": null,
-   "jornadas": 0,
-   "pacientes": 1,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {}
-  },
-  {
-   "unidad": "HGSZ 9",
-   "planeados": 10,
-   "intervenidos": null,
-   "jornadas": 1,
-   "pacientes": 10,
-   "realizados": 0,
-   "no_realizados": 0,
-   "turnos": {},
-   "cirugias": {
-    "Colecistectomía": 4,
-    "Hernioplastía": 6
-   }
-  }
- ]
+  "generado": "2026-11-24T20:25:11Z",
+  "unidades": [
+    {
+      "unidad": "HGZ 1",
+      "planeados": null,
+      "intervenidos": null,
+      "jornadas": 0,
+      "pacientes": 18,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {
+        "Vespertino": 2,
+        "Nocturno": 9,
+        "Matutino": 3,
+        "Jornada": 4
+      },
+      "cirugias": {
+        "Histerectomía": 10,
+        "Hernioplastía": 4,
+        "Colecistectomía": 4
+      }
+    },
+    {
+      "unidad": "HGZ 2",
+      "planeados": 20,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 20,
+      "realizados": 3,
+      "no_realizados": 0,
+      "turnos": {
+        "Nocturno": 10,
+        "Vespertino": 4,
+        "Matutino": 6
+      },
+      "cirugias": {
+        "Plastia inguinal bilateral": 1,
+        "Plastia umbilical": 6,
+        "Plastia inguinal": 2,
+        "Plastia abdominal": 1,
+        "Artroplastía total de rodilla": 10
+      }
+    },
+    {
+      "unidad": "HGZ 6",
+      "planeados": 10,
+      "intervenidos": 7,
+      "jornadas": 1,
+      "pacientes": 0,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {}
+    },
+    {
+      "unidad": "HGZ 50",
+      "planeados": 18,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 28,
+      "realizados": 2,
+      "no_realizados": 3,
+      "turnos": {
+        "Matutino": 12,
+        "Vespertino": 12,
+        "Nocturno": 1
+      },
+      "cirugias": {
+        "Colecistectomía": 11,
+        "Hernia": 4,
+        "Colecistectomía lap": 7,
+        "Hernia inguinal": 5
+      }
+    },
+    {
+      "unidad": "HGSZ 4",
+      "planeados": null,
+      "intervenidos": null,
+      "jornadas": 0,
+      "pacientes": 1,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {}
+    },
+    {
+      "unidad": "HGSZ 9",
+      "planeados": 10,
+      "intervenidos": null,
+      "jornadas": 1,
+      "pacientes": 10,
+      "realizados": 0,
+      "no_realizados": 0,
+      "turnos": {},
+      "cirugias": {
+        "Colecistectomía": 4,
+        "Hernioplastía": 6
+      }
+    }
+  ]
 }
