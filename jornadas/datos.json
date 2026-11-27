@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-27T16:25:05Z",
+ "generado": "2026-11-27T17:25:21Z",
  "unidades": [
   {
    "unidad": "HGZ 1",
@@ -58,17 +58,17 @@
    "planeados": 18,
    "intervenidos": null,
    "jornadas": 1,
-   "pacientes": 31,
+   "pacientes": 41,
    "realizados": 13,
    "no_realizados": 4,
    "turnos": {
-    "Matutino": 14,
-    "Vespertino": 13,
+    "Matutino": 20,
+    "Vespertino": 15,
     "Nocturno": 1
    },
    "cirugias": {
-    "Colecistectomía": 13,
-    "Hernia": 5,
+    "Colecistectomía": 20,
+    "Hernia": 8,
     "Colecistectomía lap": 7,
     "Hernia inguinial": 1,
     "Hernia inguinal": 4
